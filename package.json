@@ -15,7 +15,8 @@
     "nueva-asignatura": "node scripts/nueva-asignatura.ts",
     "nuevo-semestre": "node scripts/nuevo-semestre.ts",
     "plan": "node scripts/generar-plan.ts",
-    "screenshots": "node scripts/screenshots.ts"
+    "screenshots": "node scripts/screenshots.ts",
+    "check-code": "node scripts/check-code.ts"
   },
   "engines": {
     "node": ">=22.18"

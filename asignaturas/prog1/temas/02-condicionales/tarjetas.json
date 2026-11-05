@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schemas/tarjetas.schema.json",
+  "asignatura": "prog1",
+  "tema": "02-condicionales",
+  "fuente": "genérico - revisar con apuntes",
+  "tarjetas": [
+    { "id": "def-bool", "tipo": "concepto", "anverso": "¿Qué es una condición en C++?", "reverso": "Una expresión de tipo `bool`: vale `true` o `false`. P. ej. `n % 2 == 0`." },
+    { "id": "def-operadores-logicos", "tipo": "concepto", "anverso": "¿Qué hacen `&&`, `||` y `!`?", "reverso": "`&&`: verdadero si las dos lo son (y).\n`||`: si al menos una lo es (o).\n`!`: lo contrario (no)." },
+    { "id": "prop-cortocircuito", "tipo": "concepto", "anverso": "¿Qué es la evaluación en cortocircuito?", "reverso": "En `a && b`, si `a` es falso no se evalúa `b` (en `a || b`, si `a` es verdadero). Así `d != 0 && n / d > 2` no divide entre 0." },
+    { "id": "proc-intervalo", "tipo": "procedimiento", "anverso": "¿Cómo escribes \"$x$ entre 0 y 10\" en C++?", "reverso": "`0 <= x && x <= 10`\n(¡no `0 <= x <= 10`!)" },
+    { "id": "def-else-if", "tipo": "concepto", "anverso": "En una cadena `if / else if / else`, ¿cuántos bloques se ejecutan?", "reverso": "Solo uno: el del **primer** caso verdadero, en orden. Si ninguno lo es, el `else`." },
+    { "id": "def-switch", "tipo": "concepto", "anverso": "¿Cuándo puedes usar `switch`?", "reverso": "Para comparar una variable entera o `char` con valores concretos. No sirve para intervalos, `double` ni `string`." },
+    { "id": "error-break", "tipo": "concepto", "anverso": "¿Qué pasa si olvidas `break` en un `case`?", "reverso": "La ejecución sigue en el `case` siguiente (\"cae\") hasta encontrar un `break` o el final del `switch`." },
+    { "id": "error-asignacion-condicion", "tipo": "concepto", "anverso": "¿Qué hace `if (x = 0)`?", "reverso": "Asigna 0 a `x` y la condición vale falso siempre. Para comparar: `if (x == 0)`." },
+    { "id": "error-punto-coma-if", "tipo": "concepto", "anverso": "¿Qué pasa con `if (x > 0); { ... }`?", "reverso": "El `;` termina el `if` (cuerpo vacío): el bloque `{ ... }` se ejecuta **siempre**." },
+    { "id": "error-dangling-else", "tipo": "concepto", "anverso": "Sin llaves, ¿con qué `if` se empareja un `else`?", "reverso": "Con el `if` más cercano que no tenga `else`, diga lo que diga la sangría. Usa siempre llaves." },
+    { "id": "proc-bisiesto", "tipo": "procedimiento", "anverso": "Condición de año bisiesto en C++.", "reverso": "`(a % 4 == 0 && a % 100 != 0) || a % 400 == 0`" },
+    { "id": "proc-mayor-de-tres", "tipo": "procedimiento", "anverso": "¿Cómo calculas el mayor de `a`, `b`, `c`?", "reverso": "`int mayor = a;`\n`if (b > mayor) mayor = b;`\n`if (c > mayor) mayor = c;`\n(supón y corrige)" },
+    { "id": "error-comparar-double", "tipo": "concepto", "anverso": "¿Por qué no comparar `double` con `==`?", "reverso": "Por el redondeo: `0.1 + 0.2 == 0.3` es falso. Usa un margen: `fabs(a - b) < 1e-9`." },
+    { "id": "def-ternario", "tipo": "concepto", "anverso": "¿Qué hace `cond ? x : y`?", "reverso": "Vale `x` si `cond` es verdadera e `y` si no. `int m = a > b ? a : b;`" },
+    { "id": "proc-triangulo", "tipo": "procedimiento", "anverso": "¿Cuándo tres lados $a,b,c>0$ forman un triángulo?", "reverso": "Cuando cada lado es menor que la suma de los otros dos: `a < b + c && b < a + c && c < a + b`." }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../../schemas/tarjetas.schema.json",
+  "asignatura": "prog1",
+  "tema": "01-tipos-y-expresiones",
+  "fuente": "genérico - revisar con apuntes",
+  "tarjetas": [
+    { "id": "def-variable", "tipo": "concepto", "anverso": "¿Qué es una variable?", "reverso": "Una \"caja\" con nombre y **tipo** donde se guarda un dato que puede cambiar durante el programa." },
+    { "id": "def-tipos-basicos", "tipo": "concepto", "anverso": "Tipos básicos de C++ y un ejemplo de cada uno.", "reverso": "`int` 42 · `double` 3.14 · `char` 'a' · `bool` true · `string` \"hola\"" },
+    { "id": "prop-division-entera", "tipo": "concepto", "anverso": "¿Cuánto vale `7 / 2` en C++? ¿Y `7.0 / 2`?", "reverso": "`7 / 2` vale **3** (los dos son `int`: división entera). `7.0 / 2` vale **3.5**." },
+    { "id": "def-resto", "tipo": "concepto", "anverso": "¿Qué hace el operador `%`?", "reverso": "Da el resto de la división entera: `17 % 5 == 2`. Solo con enteros." },
+    { "id": "proc-media-correcta", "tipo": "procedimiento", "anverso": "¿Cómo calculas bien la media de los enteros `a` y `b`?", "reverso": "`double m = static_cast<double>(a + b) / 2;`\n(o dividir entre `2.0`). Si no, la división es entera." },
+    { "id": "proc-cifras", "tipo": "procedimiento", "anverso": "¿Cómo obtienes la última cifra de `n` y cómo la quitas?", "reverso": "Última cifra: `n % 10`.\nQuitarla: `n / 10`." },
+    { "id": "def-asignacion", "tipo": "concepto", "anverso": "¿Qué significa `x = x + 1;`?", "reverso": "No es una ecuación: calcula `x + 1` con el valor actual y lo guarda en `x` (aumenta `x` en 1). Equivale a `x++` o `x += 1`." },
+    { "id": "prop-truncar", "tipo": "concepto", "anverso": "¿Qué guarda `int n = 3.9;`?", "reverso": "`3`: al pasar de `double` a `int` se **truncan** los decimales (no se redondea)." },
+    { "id": "def-char-comillas", "tipo": "concepto", "anverso": "¿Diferencia entre `'a'` y `\"a\"`?", "reverso": "`'a'` es un `char` (un carácter). `\"a\"` es un texto (`string`) de longitud 1." },
+    { "id": "prop-char-numero", "tipo": "concepto", "anverso": "¿Cómo conviertes el carácter `'7'` en el número 7?", "reverso": "`c - '0'`: los caracteres son números (código ASCII) y los dígitos son consecutivos." },
+    { "id": "prop-prioridad", "tipo": "concepto", "anverso": "Prioridad de `+ - * / %` y cuánto vale `17 / 5 * 5`.", "reverso": "Primero `* / %`, luego `+ -`; a igual prioridad, de izquierda a derecha. `17 / 5 * 5 = 3 * 5 = 15`." },
+    { "id": "def-const", "tipo": "concepto", "anverso": "¿Para qué sirve `const`?", "reverso": "Declara una constante que no se puede modificar: `const double PI = 3.14159;`" },
+    { "id": "error-sin-inicializar", "tipo": "concepto", "anverso": "¿Qué vale una variable local declarada sin inicializar?", "reverso": "Basura (cualquier valor). Inicializa siempre: `int suma = 0;`" },
+    { "id": "proc-cin-cout", "tipo": "procedimiento", "anverso": "¿Cómo lees dos enteros y escribes su suma?", "reverso": "`int a, b;`\n`cin >> a >> b;`\n`cout << a + b << endl;`\n(necesitas `#include <iostream>`)" },
+    { "id": "proc-intercambio", "tipo": "procedimiento", "anverso": "¿Cómo intercambias los valores de `a` y `b`?", "reverso": "Con una auxiliar:\n`int aux = a; a = b; b = aux;`" },
+    { "id": "proc-horas-minutos", "tipo": "procedimiento", "anverso": "¿Cómo pasas `t` segundos a horas, minutos y segundos?", "reverso": "`h = t / 3600;`\n`m = (t % 3600) / 60;`\n`s = t % 60;`" }
+  ]
+}
