@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../schemas/tarjetas.schema.json",
+  "asignatura": "prog1",
+  "tema": "04-funciones",
+  "fuente": "genérico - revisar con apuntes",
+  "tarjetas": [
+    { "id": "def-funcion", "tipo": "concepto", "anverso": "¿Para qué sirven las funciones?", "reverso": "Para no repetir código y dividir un problema grande en tareas pequeñas con nombre, que se pueden probar por separado." },
+    { "id": "def-partes", "tipo": "concepto", "anverso": "Partes de `int maximo(int a, int b) { ... }`.", "reverso": "`int`: tipo de retorno. `maximo`: nombre. `int a, int b`: parámetros. `{ ... }`: cuerpo con `return`." },
+    { "id": "def-void", "tipo": "concepto", "anverso": "¿Qué significa que una función sea `void`?", "reverso": "Que no devuelve ningún valor (no hace `return valor;`). Se usa para acciones, p. ej. `intercambiar`." },
+    { "id": "def-return", "tipo": "concepto", "anverso": "¿Qué hace `return`?", "reverso": "Devuelve el valor a quien llamó **y termina la función** en ese momento (lo de después no se ejecuta)." },
+    { "id": "def-prototipo", "tipo": "concepto", "anverso": "¿Qué es un prototipo y para qué sirve?", "reverso": "La cabecera de la función terminada en `;` (`bool esPar(int n);`). Permite usarla antes de definirla." },
+    { "id": "def-valor", "tipo": "concepto", "anverso": "¿Qué es el paso por valor?", "reverso": "El parámetro es una **copia** del argumento: cambiarlo dentro no afecta a la variable original." },
+    { "id": "def-referencia", "tipo": "concepto", "anverso": "¿Qué es el paso por referencia (`int& x`)?", "reverso": "El parámetro es otro nombre de la **misma** variable: los cambios dentro se ven fuera. El argumento debe ser una variable." },
+    { "id": "proc-cuando-referencia", "tipo": "procedimiento", "anverso": "¿Cuándo pasas un parámetro por referencia?", "reverso": "1. Si la función debe modificarlo.\n2. Para devolver varios resultados.\n3. Datos grandes sin copiar: `const vector<int>&`." },
+    { "id": "proc-intercambiar", "tipo": "procedimiento", "anverso": "Escribe la función que intercambia dos enteros.", "reverso": "`void intercambiar(int& a, int& b) {`\n`  int aux = a; a = b; b = aux;`\n`}`" },
+    { "id": "def-ambito", "tipo": "concepto", "anverso": "¿Puede una función usar una variable local de `main`?", "reverso": "No: las variables locales solo existen en su bloque `{ }`. Los datos entran por parámetros y salen por `return` o referencia." },
+    { "id": "proc-dos-resultados", "tipo": "procedimiento", "anverso": "¿Cómo hace una función para \"devolver\" cociente y resto?", "reverso": "`void division(int a, int b, int& c, int& r) { c = a / b; r = a % b; }`" },
+    { "id": "error-sin-return", "tipo": "concepto", "anverso": "¿Qué pasa si una función `int` no hace `return` en algún camino?", "reverso": "Devuelve basura (comportamiento indefinido). `-Wall` avisa: \"control reaches end of non-void function\"." },
+    { "id": "error-tipo-en-llamada", "tipo": "concepto", "anverso": "¿Qué está mal en `int r = cuadrado(int x);`?", "reverso": "En la llamada no se pone el tipo: `cuadrado(x)`. El tipo va solo en la declaración." },
+    { "id": "proc-esprimo-return", "tipo": "procedimiento", "anverso": "Función `esPrimo` usando `return` para cortar.", "reverso": "`if (n < 2) return false;`\n`for (int d = 2; d * d <= n; d++)`\n`  if (n % d == 0) return false;`\n`return true;`" },
+    { "id": "def-diseno", "tipo": "concepto", "anverso": "¿Por qué una función que calcula no debería usar `cin`/`cout`?", "reverso": "Para poder reutilizarla y probarla: recibe datos por parámetros y devuelve el resultado; `main` lee y escribe." }
+  ]
+}

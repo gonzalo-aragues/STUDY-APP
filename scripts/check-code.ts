@@ -1,8 +1,10 @@
-// Compiles (and optionally runs) every complete C++ program found in the material.
+// Compiles (and optionally runs) every complete C++ program in explicacion.md and soluciones.md
+// (ejercicios.md is skipped: exercises may contain intentionally broken code).
 //
 //   npm run check-code [-- --asignatura prog1]
 //
-// A ```cpp block counts as a full program if it contains "int main". If the block is followed by
+// A ```cpp block counts as a full program if it contains "#include" and "int main" (fragments
+// without includes are skipped). If the block is followed by
 // a fenced block whose first line is "// entrada" (```text), that input is fed to the program
 // and, if there is a following "// salida esperada" block, the output is compared.
 // Needs g++ (skipped with a warning if missing). Used by the apuntes-a-material skill.
@@ -51,13 +53,13 @@ function main() {
     if (values.asignatura && meta.slug !== values.asignatura) continue;
     if (!['cpp', 'c++'].includes((meta.lenguaje ?? '').toLowerCase())) continue;
     for (const t of meta.temas) {
-      for (const f of ['explicacion.md', 'ejercicios.md', 'soluciones.md']) {
+      for (const f of ['explicacion.md', 'soluciones.md']) {
         const path = join(s.dir, 'temas', t.slug, f);
         const md = readIfExists(path);
         if (!md) continue;
         const blocks = extractBlocks(md);
         blocks.forEach((b, i) => {
-          if (!['cpp', 'c++'].includes(b.lang) || !/\bint\s+main\s*\(/.test(b.code)) return;
+          if (!['cpp', 'c++'].includes(b.lang) || !/\bint\s+main\s*\(/.test(b.code) || !/#include/.test(b.code)) return;
           const where = `${relative(REPO_ROOT, path)}:${b.line}`;
           const src = join(tmp, `p${ok + fails.length}.cpp`);
           const exe = src.replace(/\.cpp$/, '');

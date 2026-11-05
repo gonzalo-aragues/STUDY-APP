@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../../schemas/tarjetas.schema.json",
+  "asignatura": "prog1",
+  "tema": "03-bucles",
+  "fuente": "genérico - revisar con apuntes",
+  "tarjetas": [
+    { "id": "def-ingredientes", "tipo": "concepto", "anverso": "¿Cuáles son los tres ingredientes de todo bucle?", "reverso": "Inicialización, condición y avance (algo que acerca al final; si falta, bucle infinito)." },
+    { "id": "def-while-vs-do", "tipo": "concepto", "anverso": "Diferencia entre `while` y `do-while`.", "reverso": "`while` comprueba antes: 0 o más vueltas. `do-while` comprueba después: al menos 1 vuelta (ideal para validar datos)." },
+    { "id": "def-for", "tipo": "concepto", "anverso": "¿Cuántas vueltas da `for (int i = 0; i < n; i++)` y qué valores toma `i`?", "reverso": "$n$ vueltas, con `i` = 0, 1, …, $n-1$." },
+    { "id": "proc-acumulador", "tipo": "procedimiento", "anverso": "Patrón acumulador para sumar datos.", "reverso": "`int suma = 0;` **antes** del bucle.\nEn cada vuelta: `suma += x;`" },
+    { "id": "proc-contador", "tipo": "procedimiento", "anverso": "Patrón contador (¿cuántos cumplen una condición?).", "reverso": "`int cont = 0;` antes del bucle.\nEn cada vuelta: `if (condicion) cont++;`" },
+    { "id": "proc-maximo", "tipo": "procedimiento", "anverso": "¿Cómo inicializas bien el máximo de una serie de datos?", "reverso": "Con el **primer dato** (no con 0, que falla si todos son negativos). Luego `if (x > max) max = x;`" },
+    { "id": "proc-centinela", "tipo": "procedimiento", "anverso": "Esquema de lectura con centinela (hasta leer un 0).", "reverso": "`cin >> x;`\n`while (x != 0) {`\n`  procesar(x);`\n`  cin >> x;`\n`}`" },
+    { "id": "proc-validar", "tipo": "procedimiento", "anverso": "¿Cómo obligas a que el usuario introduzca un número positivo?", "reverso": "`do {`\n`  cin >> n;`\n`} while (n <= 0);`" },
+    { "id": "proc-invertir", "tipo": "procedimiento", "anverso": "¿Cómo inviertes las cifras de `n`?", "reverso": "`inv = 0;`\n`while (n > 0) { inv = inv * 10 + n % 10; n /= 10; }`" },
+    { "id": "proc-primo", "tipo": "procedimiento", "anverso": "¿Cómo compruebas si $n$ es primo?", "reverso": "`primo = n >= 2;`\n`for (d = 2; d * d <= n && primo; d++)`\n`  if (n % d == 0) primo = false;`\n(basta probar hasta $\\sqrt n$)" },
+    { "id": "proc-euclides", "tipo": "procedimiento", "anverso": "Algoritmo de Euclides para el MCD.", "reverso": "Mientras `b != 0`: `r = a % b; a = b; b = r;`\nEl MCD es `a`." },
+    { "id": "def-anidados", "tipo": "concepto", "anverso": "¿Cuántas veces se ejecuta el cuerpo de dos bucles anidados de $n$ y $m$ vueltas?", "reverso": "$n\\cdot m$: por cada vuelta del exterior, el interior da todas las suyas." },
+    { "id": "error-off-by-one", "tipo": "concepto", "anverso": "¿Qué es un error *off-by-one* y cómo lo evitas?", "reverso": "Dar una vuelta de más o de menos (`<=` frente a `<`). Haz una traza a mano con $n=1$ o $n=2$." },
+    { "id": "error-acumulador-dentro", "tipo": "concepto", "anverso": "¿Qué pasa si pones `int suma = 0;` dentro del bucle?", "reverso": "Se reinicia en cada vuelta: al final solo tiene el último dato." },
+    { "id": "error-factorial-int", "tipo": "concepto", "anverso": "¿Por qué el factorial de 20 sale mal con `int`?", "reverso": "Desbordamiento: `int` llega a $\\approx2\\cdot10^9$ y $20!\\approx2{,}4\\cdot10^{18}$. Usa `long long`." },
+    { "id": "error-for-punto-coma", "tipo": "concepto", "anverso": "¿Qué hace `for (int i = 0; i < n; i++); { ... }`?", "reverso": "El `;` deja el bucle vacío: da $n$ vueltas sin hacer nada y el bloque se ejecuta una vez (o no compila si usa `i`)." }
+  ]
+}
