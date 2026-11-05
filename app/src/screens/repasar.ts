@@ -1,12 +1,12 @@
 // Spaced-repetition session: front -> reveal -> Otra vez / Difícil / Bien / Fácil.
 import type { TarjetaIndex } from '../../../shared/types.ts';
-import { findSubject, loadAllCards, nextExam } from '../lib/content.ts';
+import { findSubject, loadAllCards, nextExam, priorityTemas } from '../lib/content.ts';
 import type { ScreenFn } from '../lib/ctx.ts';
 import { getAllCardStates, getReviewLog, getSetting, saveReview, setSetting, undoReview } from '../lib/db.ts';
 import { append, h, plural, svg } from '../lib/dom.ts';
 import { ICONS } from '../lib/icons.ts';
 import { go, href } from '../lib/router.ts';
-import { buildQueue, formatInterval, newIntroducedToday, plannedTemas, previewIntervals, RATINGS, requeuePosition, review, shouldRequeue, type RatingValue, type StoredCard } from '../lib/scheduler.ts';
+import { buildQueue, formatInterval, newIntroducedToday, previewIntervals, RATINGS, requeuePosition, review, shouldRequeue, type RatingValue, type StoredCard } from '../lib/scheduler.ts';
 import { loadSettings } from '../lib/settings.ts';
 import { fitMath } from '../lib/fitmath.ts';
 import { dot, empty, header } from '../lib/ui.ts';
@@ -40,7 +40,7 @@ export const renderRepasar: ScreenFn = async (route, ctx) => {
   const cards = await loadAllCards(index, settings.includeArchived || subjectForArchived?.estado === 'archivada');
   const extra = await getSetting<number>(`extraNew-${today}`, 0);
   const newLimit = settings.newPerDay + extra - newIntroducedToday(log, now0);
-  const q = buildQueue(cards, states, { now: now0, newLimit, asignatura, tema, ahead: modo === 'adelantado', priority: plannedTemas(index.plan, today) });
+  const q = buildQueue(cards, states, { now: now0, newLimit, asignatura, tema, ahead: modo === 'adelantado', priority: priorityTemas(index, today) });
   let queue: TarjetaIndex[] = modo === 'adelantado' ? q.ahead : [...q.due, ...q.fresh];
 
   const examBySubject = new Map(index.asignaturas.map((a) => [a.slug, nextExam(a, today)]));

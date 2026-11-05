@@ -1,12 +1,12 @@
 import { daysBetween, formatLong, formatShort, formatHours } from '../../../shared/dates.ts';
 import type { ItemPlan } from '../../../shared/types.ts';
-import { findSubject, loadAllCards, nextExam } from '../lib/content.ts';
+import { findSubject, loadAllCards, nextExam, priorityTemas } from '../lib/content.ts';
 import { hashKey, type ScreenFn } from '../lib/ctx.ts';
 import { getAllCardStates, getReviewLog, getSetting, getTaskChecks, setTaskCheck } from '../lib/db.ts';
 import { h, plural, svg } from '../lib/dom.ts';
 import { ICONS } from '../lib/icons.ts';
 import { href } from '../lib/router.ts';
-import { buildQueue, newIntroducedToday, plannedTemas, streak } from '../lib/scheduler.ts';
+import { buildQueue, newIntroducedToday, streak } from '../lib/scheduler.ts';
 import { loadSettings } from '../lib/settings.ts';
 import { countdownLabel, dot, header } from '../lib/ui.ts';
 
@@ -28,7 +28,7 @@ export const renderHoy: ScreenFn = async (_route, ctx) => {
   const today = ctx.today();
   const [settings, cards, states, log, checks] = await Promise.all([loadSettings(), loadAllCards(index, false), getAllCardStates(), getReviewLog(now - 400 * 86_400_000), getTaskChecks()]);
   const extra = await getSetting<number>(`extraNew-${today}`, 0);
-  const q = buildQueue(cards, states, { now, newLimit: settings.newPerDay + extra - newIntroducedToday(log, now), priority: plannedTemas(index.plan, today) });
+  const q = buildQueue(cards, states, { now, newLimit: settings.newPerDay + extra - newIntroducedToday(log, now), priority: priorityTemas(index, today) });
   const dueCount = q.due.length;
   const newCount = q.fresh.length;
   const racha = streak(log, now);
