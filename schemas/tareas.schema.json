@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://gonzalo-aragues.github.io/STUDY-APP/schemas/tareas.schema.json",
+  "title": "Tareas divididas en pasos (plan/tareas.json)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tareas"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "tareas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "titulo", "creada", "pasos"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+          "titulo": { "type": "string", "minLength": 1 },
+          "asignatura": { "type": "string" },
+          "tema": { "type": "string" },
+          "creada": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+          "fechaLimite": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+          "archivada": { "type": "boolean" },
+          "pasos": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "texto", "minutos"],
+              "properties": {
+                "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+                "texto": { "type": "string", "minLength": 1 },
+                "minutos": { "type": "integer", "minimum": 10, "maximum": 30 },
+                "detalle": { "type": "string" },
+                "enlace": { "description": "Ruta dentro de la app, p. ej. #/asignaturas/algebra/02-estructuras-algebraicas", "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
