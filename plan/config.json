@@ -1,0 +1,15 @@
+{
+  "$comentario": "Horas disponibles para plan-de-examenes / npm run plan. diasEspeciales: fecha -> horas (0 = descanso).",
+  "horasPorDia": 3,
+  "horasIntensivas": 5,
+  "diasIntensivos": 10,
+  "horasDiaExamen": 1.5,
+  "diasExamenCercano": 4,
+  "diasEspeciales": {
+    "2026-12-24": 2,
+    "2026-12-25": 1,
+    "2026-12-31": 2,
+    "2027-01-01": 1
+  },
+  "notas": []
+}
