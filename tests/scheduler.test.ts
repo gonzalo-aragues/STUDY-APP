@@ -6,8 +6,10 @@ import {
   fromStored,
   newCard,
   newIntroducedToday,
+  plannedTemas,
   previewIntervals,
   review,
+  requeuePosition,
   shouldRequeue,
   streak,
   toStored,
@@ -160,5 +162,42 @@ describe('session helpers', () => {
     expect(streak(l, T0 + DAY)).toBe(3); // nothing yet today: streak still alive
     expect(streak(l, T0 + 2 * DAY)).toBe(0);
     expect(streak([], T0)).toBe(0);
+  });
+});
+
+describe('new-card priority from the plan', () => {
+  const cards = [
+    { id: 'calc/03/a', asignatura: 'calc', tema: '03' },
+    { id: 'prog/01/a', asignatura: 'prog', tema: '01' },
+    { id: 'prog/01/b', asignatura: 'prog', tema: '01' },
+    { id: 'alg/01/a', asignatura: 'alg', tema: '01' },
+  ];
+  const plan = {
+    semanas: [
+      {
+        dias: [
+          { fecha: '2026-11-05', items: [{ asignatura: '*' }, { asignatura: 'alg', tema: '01' }, { asignatura: 'prog', tema: '01' }] },
+          { fecha: '2026-11-06', items: [{ asignatura: 'calc', tema: '03' }] },
+        ],
+      },
+    ],
+  };
+  it('collects planned temas up to today in order', () => {
+    expect(plannedTemas(plan, '2026-11-05')).toEqual(['alg/01', 'prog/01']);
+    expect(plannedTemas(plan, '2026-11-06')).toEqual(['alg/01', 'prog/01', 'calc/03']);
+    expect(plannedTemas(null, '2026-11-06')).toEqual([]);
+  });
+  it('introduces new cards from planned temas first', () => {
+    const q = buildQueue(cards, new Map(), { now: T0, newLimit: 3, priority: plannedTemas(plan, '2026-11-05') });
+    expect(q.fresh.map((c) => c.id)).toEqual(['alg/01/a', 'prog/01/a', 'prog/01/b']);
+  });
+});
+
+describe('requeuePosition', () => {
+  it('spaces learning cards by their due time', () => {
+    expect(requeuePosition(60_000, 50)).toBe(3); // 1 min -> ~3 cards later
+    expect(requeuePosition(10 * 60_000, 50)).toBe(30); // 10 min -> ~30 cards later
+    expect(requeuePosition(10 * 60_000, 5)).toBe(5); // short queue: at the end
+    expect(requeuePosition(0, 10)).toBe(2); // never immediately
   });
 });

@@ -66,3 +66,19 @@ describe('buildIndex', () => {
     expect(stripTitle('## Sub\nx')).toBe('## Sub\nx');
   });
 });
+
+describe('buildIndex with archived subjects', () => {
+  it('writes archived content under content/archivo/ (not precached)', () => {
+    const root = makeRepo({
+      'archivo/2025-26-S2/fisica/meta.json': { ...validMeta, slug: 'fisica', semestre: '2025-26-S2', estado: 'archivada' },
+      'archivo/2025-26-S2/fisica/temas/01-matrices/explicacion.md': '# X\nHola',
+      'archivo/2025-26-S2/fisica/temas/01-matrices/tarjetas.json': { ...validTarjetas, asignatura: 'fisica' },
+    });
+    const out = join(root, 'out');
+    const { index } = buildIndex(root, out);
+    const a = index.asignaturas[0];
+    expect(a.tarjetasUrl).toBe('content/archivo/tarjetas/fisica.json');
+    expect(a.temas[0].url).toBe('content/archivo/temas/fisica/01-matrices.json');
+    expect(existsSync(join(out, 'archivo/temas/fisica/01-matrices.json'))).toBe(true);
+  });
+});

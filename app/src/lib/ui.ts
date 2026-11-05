@@ -40,3 +40,10 @@ export function countdownLabel(days: number): string {
   if (days === 1) return 'Mañana';
   return `${days} días`;
 }
+
+/** "2026-27-S1" -> "1.er semestre 2026/27" */
+export function semestreLabel(s: string): string {
+  const m = /^(\d{4})-(\d{2})-S([12])$/.exec(s);
+  if (!m) return s;
+  return `${m[3] === '1' ? '1.er' : '2.º'} semestre ${m[1]}/${m[2]}`;
+}

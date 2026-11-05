@@ -16,7 +16,8 @@
     "nuevo-semestre": "node scripts/nuevo-semestre.ts",
     "plan": "node scripts/generar-plan.ts",
     "screenshots": "node scripts/screenshots.ts",
-    "check-code": "node scripts/check-code.ts"
+    "check-code": "node scripts/check-code.ts",
+    "e2e": "node scripts/e2e.ts"
   },
   "engines": {
     "node": ">=22.18"

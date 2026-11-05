@@ -6,7 +6,7 @@ import { getAllCardStates, getReviewLog, getSetting, saveReview, setSetting, und
 import { append, h, plural, svg } from '../lib/dom.ts';
 import { ICONS } from '../lib/icons.ts';
 import { go, href } from '../lib/router.ts';
-import { buildQueue, formatInterval, newIntroducedToday, previewIntervals, RATINGS, review, shouldRequeue, type RatingValue, type StoredCard } from '../lib/scheduler.ts';
+import { buildQueue, formatInterval, newIntroducedToday, plannedTemas, previewIntervals, RATINGS, requeuePosition, review, shouldRequeue, type RatingValue, type StoredCard } from '../lib/scheduler.ts';
 import { loadSettings } from '../lib/settings.ts';
 import { dot, empty, header } from '../lib/ui.ts';
 
@@ -39,7 +39,7 @@ export const renderRepasar: ScreenFn = async (route, ctx) => {
   const cards = await loadAllCards(index, settings.includeArchived || subjectForArchived?.estado === 'archivada');
   const extra = await getSetting<number>(`extraNew-${today}`, 0);
   const newLimit = settings.newPerDay + extra - newIntroducedToday(log, now0);
-  const q = buildQueue(cards, states, { now: now0, newLimit, asignatura, tema, ahead: modo === 'adelantado' });
+  const q = buildQueue(cards, states, { now: now0, newLimit, asignatura, tema, ahead: modo === 'adelantado', priority: plannedTemas(index.plan, today) });
   let queue: TarjetaIndex[] = modo === 'adelantado' ? q.ahead : [...q.due, ...q.fresh];
 
   const examBySubject = new Map(index.asignaturas.map((a) => [a.slug, nextExam(a, today)]));
@@ -183,7 +183,8 @@ export const renderRepasar: ScreenFn = async (route, ctx) => {
     }
     states.set(c.id, r.card);
     stats = { reviewed: stats.reviewed + 1, again: stats.again + (value === 1 ? 1 : 0), newSeen: stats.newSeen + (!previous ? 1 : 0) };
-    if (shouldRequeue(r.card, now)) queue.splice(Math.min(queue.length, 3), 0, c);
+    // Learning cards come back in this session, roughly when they are due (~20 s per card).
+    if (shouldRequeue(r.card, now)) queue.splice(requeuePosition(r.card.due - now, queue.length), 0, c);
     busy = false;
     showNext();
   }
@@ -195,7 +196,8 @@ export const renderRepasar: ScreenFn = async (route, ctx) => {
     await undoReview(u.card.id, u.previous, u.logKey);
     if (u.previous) states.set(u.card.id, u.previous);
     else states.delete(u.card.id);
-    if (current) u.queue.unshift(current);
+    // The snapshot was taken right after rating, before the next card was taken from the
+    // queue, so it already contains the card currently on screen.
     queue = u.queue;
     stats = u.stats;
     current = u.card;

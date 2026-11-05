@@ -183,6 +183,9 @@ export interface QueueOptions {
   tema?: string;
   ahead?: boolean; // review ahead: include not-yet-due cards (lowest due first)
   aheadLimit?: number;
+  /** "asignatura/tema" keys in priority order (e.g. temas the plan has already scheduled). New
+   *  cards from these temas are introduced first, in this order; the rest keep content order. */
+  priority?: string[];
 }
 
 export interface Queue<T extends QueueCard> {
@@ -207,6 +210,11 @@ export function buildQueue<T extends QueueCard>(cards: T[], states: Map<string, 
     else later.push(c);
   }
   due.sort((a, b) => states.get(a.id)!.due - states.get(b.id)!.due);
+  if (o.priority?.length) {
+    const rank = new Map(o.priority.map((k, i) => [k, i]));
+    const r = (c: T) => rank.get(`${c.asignatura}/${c.tema}`) ?? Infinity;
+    fresh.sort((a, b) => r(a) - r(b)); // stable: content order is kept within a tema / for the rest
+  }
   later.sort((a, b) => states.get(a.id)!.due - states.get(b.id)!.due);
   return {
     due,
@@ -216,6 +224,25 @@ export function buildQueue<T extends QueueCard>(cards: T[], states: Map<string, 
 }
 
 /** New cards introduced today (according to the log), to enforce the daily new-card limit. */
+/** Temas the plan has scheduled up to `today` (inclusive), in order of first appearance. */
+export function plannedTemas(plan: { semanas: { dias: { fecha: string; items: { asignatura: string; tema?: string }[] }[] }[] } | null, today: string): string[] {
+  const out: string[] = [];
+  const seen = new Set<string>();
+  for (const w of plan?.semanas ?? [])
+    for (const d of w.dias) {
+      if (d.fecha > today) return out;
+      for (const it of d.items) {
+        if (!it.tema) continue;
+        const k = `${it.asignatura}/${it.tema}`;
+        if (!seen.has(k)) {
+          seen.add(k);
+          out.push(k);
+        }
+      }
+    }
+  return out;
+}
+
 export function newIntroducedToday(log: ReviewLogEntry[], now: number): number {
   const start = new Date(now);
   start.setHours(0, 0, 0, 0);
@@ -230,6 +257,11 @@ export function newIntroducedToday(log: ReviewLogEntry[], now: number): number {
  */
 export function shouldRequeue(card: StoredCard, now: number, horizonMin = 20): boolean {
   return card.due - now <= horizonMin * MIN;
+}
+
+/** Where to re-insert a learning card in the session queue: ~20 s per card, at least 2 cards later. */
+export function requeuePosition(delayMs: number, queueLength: number): number {
+  return Math.min(queueLength, Math.max(2, Math.ceil(delayMs / 20_000)));
 }
 
 /** Study streak: consecutive days (ending today or yesterday) with at least one review. */

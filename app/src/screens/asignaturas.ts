@@ -6,7 +6,7 @@ import { getTaskChecks, setTaskCheck } from '../lib/db.ts';
 import { h, plural, svg } from '../lib/dom.ts';
 import { ICONS } from '../lib/icons.ts';
 import { href } from '../lib/router.ts';
-import { countdownLabel, empty, genericBanner, header } from '../lib/ui.ts';
+import { countdownLabel, empty, genericBanner, header, semestreLabel } from '../lib/ui.ts';
 
 export const renderAsignaturas: ScreenFn = async (route, ctx) => {
   const [, slug, tema, tab] = route.path;
@@ -48,7 +48,7 @@ async function renderList(ctx: Ctx) {
         'details',
         { class: 'archived' },
         h('summary', null, `Archivadas (${archived.length})`),
-        [...bySem.entries()].sort((x, y) => y[0].localeCompare(x[0])).map(([sem, list]) => [h('p', { class: 'kicker' }, sem), h('div', { class: 'list' }, list.map((a) => subjectRow(a, ctx)))]),
+        [...bySem.entries()].sort((x, y) => y[0].localeCompare(x[0])).map(([sem, list]) => [h('p', { class: 'kicker' }, semestreLabel(sem)), h('div', { class: 'list' }, list.map((a) => subjectRow(a, ctx)))]),
       ),
     );
   }
@@ -65,7 +65,7 @@ async function renderSubject(ctx: Ctx, slug: string) {
     { class: 'screen', style: `--c:${a.color}` },
     header(a.nombre, {
       back: href('asignaturas'),
-      subtitle: [a.semestre, a.estado === 'archivada' ? 'archivada' : null, exams.length ? `examen ${formatShort(exams[0].fecha)} (${countdownLabel(daysBetween(today, exams[0].fecha)).toLowerCase()})` : null].filter(Boolean).join(' · '),
+      subtitle: [semestreLabel(a.semestre), a.estado === 'archivada' ? 'archivada' : null, exams.length ? `examen ${formatShort(exams[0].fecha)} (${countdownLabel(daysBetween(today, exams[0].fecha)).toLowerCase()})` : null].filter(Boolean).join(' · '),
     }),
   );
   if (a.numTarjetas) {

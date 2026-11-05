@@ -39,7 +39,7 @@ export const renderPlan: ScreenFn = async (route, ctx) => {
       h(
         'section',
         { class: `card day${isToday ? ' today' : ''}${d.fecha < today ? ' past' : ''}` },
-        h('h2', null, formatShort(d.fecha), isToday ? h('span', { class: 'tag tag-new' }, 'Hoy') : null, d.horas ? h('span', { class: 'muted small h-aside' }, `≈ ${formatHours(d.horas)} h`) : null),
+        h('h2', null, formatShort(d.fecha).replace(/^./, (c) => c.toUpperCase()), isToday ? h('span', { class: 'tag tag-new' }, 'Hoy') : null, d.horas ? h('span', { class: 'muted small h-aside' }, `≈ ${formatHours(d.horas)} h`) : null),
         h(
           'ul',
           { class: 'plain day-items' },

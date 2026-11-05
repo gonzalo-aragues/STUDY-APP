@@ -115,3 +115,20 @@ Formato: **decisión** — motivo.
   mensajes sin tildes, títulos `##` cortos (los usa el plan), guía de horas por tema.
 - **plan-de-examenes**: documentados `plan/config.json`, la corrección del simulacro y el ejemplo real.
 - **dividir-tarea**: citar títulos exactos y números de ejercicio; dónde aparece en la app.
+
+## Verificación visual y pruebas en navegador (milestone 7)
+
+- **`node scripts/screenshots.ts`** hace capturas de 15 pantallas a 390 px (claro y oscuro) y a
+  1280 px, y comprueba que nada se salga del ancho, que no haya fórmulas con error y que no haya
+  errores de consola. Resultado final: sin problemas. Algunas capturas están en `docs/capturas/`.
+- **`npm run e2e`** (nuevo) prueba en Chromium el flujo real: Hoy → Repasar en un toque, revelar,
+  puntuar, deshacer, persistencia tras recargar, sesión de 5 min, marcar pasos, ver solución,
+  exportar copia e importarla en otro navegador, y **funcionamiento sin conexión**. 18/18 ✅.
+- **Bugs que encontraron estas pruebas y arreglé**: "Deshacer" duplicaba la siguiente tarjeta; las
+  tarjetas "Bien" en aprendizaje volvían a las 3 tarjetas (ahora vuelven según cuándo tocan,
+  ~20 s por tarjeta); `capitalize` ponía "≈ 3 H" en el plan; un falso positivo de desbordamiento
+  con los SVG de KaTeX.
+- **Las tarjetas nuevas salen primero de los temas que el plan ya te ha mandado estudiar**
+  (no tiene sentido que te pregunte por series antes de leerlas). El resto, después.
+- **Asignaturas archivadas no se precachean** (van en `content/archivo/`, se guardan al abrirlas):
+  así la app no crece cada semestre. Un tema de mates pesa ~550 KB sin comprimir pero ~25 KB por red.

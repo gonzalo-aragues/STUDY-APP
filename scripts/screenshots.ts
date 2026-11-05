@@ -101,7 +101,9 @@ for (const vp of [
           if (r.width === 0) continue;
           // Elements inside horizontal scrollers are fine.
           if ((el as HTMLElement).closest('.katex-display, .math-block, pre, .table-wrap, .segmented')) continue;
-          if (r.right > vw + 1 || r.left < -1) over.push(`${el.tagName.toLowerCase()}.${(el as HTMLElement).className}`.slice(0, 80));
+          // KaTeX draws radicals/overlines with very wide SVGs clipped by their box: check the box.
+          if (el instanceof SVGElement && el.closest('.katex')) continue;
+          if (r.right > vw + 1 || r.left < -1) over.push(`${el.tagName.toLowerCase()}.${String((el as HTMLElement).getAttribute('class') ?? '')} «${(el.textContent ?? '').slice(0, 30)}»`.slice(0, 100));
         }
         return {
           scrollW: document.documentElement.scrollWidth,

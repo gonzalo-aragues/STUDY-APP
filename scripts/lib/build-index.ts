@@ -40,6 +40,10 @@ export function buildIndex(root = REPO_ROOT, outDir = join(REPO_ROOT, 'app', 'pu
     if (!existsSync(s.metaPath)) continue;
     const meta = JSON.parse(readFileSync(s.metaPath, 'utf8')) as Meta;
     const slug = meta.slug;
+    // Archived subjects live under content/archivo/ so the service worker does not precache them
+    // (they are cached on first use instead): the offline bundle doesn't grow every semester.
+    const prefix = s.archived ? 'content/archivo' : 'content';
+    const outPrefix = s.archived ? join(outDir, 'archivo') : outDir;
     const cards: TarjetaIndex[] = [];
     const temas: TemaIndex[] = [];
 
@@ -77,7 +81,7 @@ export function buildIndex(root = REPO_ROOT, outDir = join(REPO_ROOT, 'app', 'pu
 
       let url: string | null = null;
       if (hasAny) {
-        url = `content/temas/${slug}/${t.slug}.json`;
+        url = `${prefix}/temas/${slug}/${t.slug}.json`;
         const content: TemaContent = {
           asignatura: slug,
           tema: t.slug,
@@ -86,7 +90,7 @@ export function buildIndex(root = REPO_ROOT, outDir = join(REPO_ROOT, 'app', 'pu
           explicacionHtml: expl ? renderMarkdown(stripTitle(parseFrontMatter(expl).body)) : null,
           ejercicios,
         };
-        writeJson(join(outDir, 'temas', slug, `${t.slug}.json`), content);
+        writeJson(join(outPrefix, 'temas', slug, `${t.slug}.json`), content);
         stats.temas++;
       }
       stats.ejercicios += ejercicios.length;
@@ -104,8 +108,8 @@ export function buildIndex(root = REPO_ROOT, outDir = join(REPO_ROOT, 'app', 'pu
 
     let tarjetasUrl: string | null = null;
     if (cards.length) {
-      tarjetasUrl = `content/tarjetas/${slug}.json`;
-      writeJson(join(outDir, 'tarjetas', `${slug}.json`), cards);
+      tarjetasUrl = `${prefix}/tarjetas/${slug}.json`;
+      writeJson(join(outPrefix, 'tarjetas', `${slug}.json`), cards);
     }
     stats.tarjetas += cards.length;
     stats.asignaturas++;

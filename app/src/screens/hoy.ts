@@ -6,9 +6,11 @@ import { getAllCardStates, getReviewLog, getSetting, getTaskChecks, setTaskCheck
 import { h, plural, svg } from '../lib/dom.ts';
 import { ICONS } from '../lib/icons.ts';
 import { href } from '../lib/router.ts';
-import { buildQueue, newIntroducedToday, streak } from '../lib/scheduler.ts';
+import { buildQueue, newIntroducedToday, plannedTemas, streak } from '../lib/scheduler.ts';
 import { loadSettings } from '../lib/settings.ts';
 import { countdownLabel, dot, header } from '../lib/ui.ts';
+
+const cap = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 
 const TIPO_LABEL: Record<ItemPlan['tipo'], string> = {
   aprender: 'Aprender',
@@ -26,7 +28,7 @@ export const renderHoy: ScreenFn = async (_route, ctx) => {
   const today = ctx.today();
   const [settings, cards, states, log, checks] = await Promise.all([loadSettings(), loadAllCards(index, false), getAllCardStates(), getReviewLog(now - 400 * 86_400_000), getTaskChecks()]);
   const extra = await getSetting<number>(`extraNew-${today}`, 0);
-  const q = buildQueue(cards, states, { now, newLimit: settings.newPerDay + extra - newIntroducedToday(log, now) });
+  const q = buildQueue(cards, states, { now, newLimit: settings.newPerDay + extra - newIntroducedToday(log, now), priority: plannedTemas(index.plan, today) });
   const dueCount = q.due.length;
   const newCount = q.fresh.length;
   const racha = streak(log, now);
@@ -106,7 +108,7 @@ export const renderHoy: ScreenFn = async (_route, ctx) => {
           'div',
           { class: 'grow' },
           h('p', { class: 'item-meta' }, subj ? [dot(subj.color), h('span', null, subj.abreviatura)] : null, h('span', { class: `tag tag-${it.tipo}` }, TIPO_LABEL[it.tipo]), it.horas ? h('span', { class: 'muted' }, `≈ ${formatHours(it.horas)} h`) : null),
-          link ? h('a', { class: 'item-text', href: link }, it.texto.replace(/^«[^»]+»: /, temaTitle ? '' : '$&')) : h('p', { class: 'item-text' }, it.texto),
+          link ? h('a', { class: 'item-text', href: link }, cap(temaTitle ? it.texto.replace(/^«[^»]+»: /, '') : it.texto)) : h('p', { class: 'item-text' }, it.texto),
           temaTitle ? h('p', { class: 'muted small' }, temaTitle) : null,
         ),
       );

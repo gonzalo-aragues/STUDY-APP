@@ -1058,7 +1058,6 @@ details.task[open] > summary {
 }
 .day h2 {
   font-size: 15px;
-  text-transform: capitalize;
 }
 .day-items {
   display: flex;
@@ -1235,6 +1234,11 @@ details.task[open] > summary {
 }
 .prose .katex {
   font-size: 1.07em;
+}
+@media (max-width: 480px) {
+  .prose .katex-display > .katex {
+    font-size: 1em;
+  }
 }
 .math-error {
   color: var(--danger);

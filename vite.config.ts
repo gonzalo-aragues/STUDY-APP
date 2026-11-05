@@ -46,6 +46,15 @@ export default defineConfig({
       workbox: {
         // Precache the app shell AND all study content so it works fully offline.
         globPatterns: ['**/*.{js,css,html,svg,png,woff2,json}'],
+        // Archived subjects are not precached; they are cached the first time you open them.
+        globIgnores: ['content/archivo/**'],
+        runtimeCaching: [
+          {
+            urlPattern: /\/content\/archivo\//,
+            handler: 'StaleWhileRevalidate',
+            options: { cacheName: 'contenido-archivado', expiration: { maxEntries: 500 } },
+          },
+        ],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         navigateFallback: 'index.html',
         cleanupOutdatedCaches: true,
