@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Estudio</title>
+    <meta name="description" content="Material de estudio y repaso espaciado de la carrera." />
+    <meta name="theme-color" content="#2f7d6d" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15181b" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Estudio" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <script>
+      // Apply the saved theme before first paint (avoids a flash).
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="app" class="shell">
+      <nav class="tabs" id="tabs" aria-label="Secciones"></nav>
+      <main id="view" class="view" tabindex="-1">
+        <p class="loading">Cargando…</p>
+      </main>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
