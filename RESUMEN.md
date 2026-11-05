@@ -45,11 +45,15 @@ no hizo falta la rama `overnight-build`.
   el intervalo debajo de cada botón, filtro por asignatura y tema, deshacer (Z), teclado
   (espacio, 1–4), repaso por adelantado y "+10 nuevas hoy". Las tarjetas de cada asignatura se
   adelantan para que las veas antes de su examen.
-- **Asignaturas** → temas → explicación y ejercicios, cada uno con **Ver solución** plegado
+- **Asignaturas** → temas (con barras de progreso: tarjetas vistas, ejercicios hechos) → explicación y ejercicios, cada uno con **Ver solución** plegado
   (emparejado por número con `soluciones.md`) y casilla "Hecho". Archivadas aparte.
-- **Exámenes**: todas las fechas con cuenta atrás. **Tareas**: checklist con progreso.
+- **Exámenes**: todas las fechas con cuenta atrás y botón **Añadir al calendario (.ics)**.
+  **Tareas**: checklist con progreso.
   **Plan**: la semana entera. **Ajustes**: tema, nuevas/día, retención, exportar/importar copia.
-- Markdown + KaTeX + código resaltado, **renderizado al compilar** (la app solo pinta HTML).
+- Markdown + KaTeX + código resaltado, **renderizado al compilar** (la app solo pinta HTML). Las
+  fórmulas largas se encogen solas para caber en el móvil.
+- Las **tarjetas nuevas** salen primero de los temas que el plan ya te ha mandado estudiar (y deja
+  de priorizar una asignatura cuando ya has hecho su examen).
 
 ### Contenido de ejemplo (genérico, marcado "revisar con apuntes")
 | Asignatura | Temas | Ejercicios | Tarjetas |
@@ -69,9 +73,10 @@ manda el examen más cercano sin abandonar los siguientes. Simulacro 3 días ant
 días antes, repaso final el día antes.
 
 ### Calidad
-- `npm test`: **84 tests** (scheduler, parser ejercicio↔solución, schemas y validación, índice,
+- `npm test`: **104 tests** (scheduler, parser ejercicio↔solución, schemas y validación, render
+  Markdown/LaTeX, índice, contenido real del repo, calendario .ics,
   plan, archivado, almacenamiento y copia de seguridad, rutas y fechas).
-- `npm run e2e`: **18 comprobaciones** en Chromium real, incluido el modo sin conexión.
+- `npm run e2e`: **19 comprobaciones** en Chromium real, incluido el modo sin conexión.
 - `scripts/screenshots.ts`: 15 pantallas × (móvil claro, móvil oscuro, escritorio) sin
   desbordamientos ni errores de KaTeX.
 - GitHub Actions: typecheck + tests + validación + build en cada push; despliegue si es `main`.
