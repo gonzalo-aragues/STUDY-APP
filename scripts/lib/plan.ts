@@ -177,9 +177,11 @@ export function temaUnits(t: PlanTema): Unit[] {
   const parts = Math.max(1, Math.min(t.secciones.length, Math.round(explH / 1.25)));
   if (t.secciones.length) {
     const groups = chunk(t.secciones, parts);
-    groups.forEach((g) =>
-      units.push({ tema: t.slug, tipo: 'aprender', label: `«${t.titulo}»: lee la explicación (${g.join(', ')})`, horas: explH / groups.length }),
-    );
+    groups.forEach((g, i) => {
+      const part = groups.length > 1 ? ` (${i + 1}/${groups.length})` : '';
+      const which = g.length === 1 ? `«${g[0]}»` : g.length === 2 ? `«${g[0]}» y «${g[1]}»` : `de «${g[0]}» a «${g[g.length - 1]}»`;
+      units.push({ tema: t.slug, tipo: 'aprender', label: `«${t.titulo}»: lee la explicación${part}, ${which}`, horas: explH / groups.length });
+    });
   } else {
     units.push({ tema: t.slug, tipo: 'aprender', label: `«${t.titulo}»: lee la explicación`, horas: explH });
   }
@@ -204,9 +206,9 @@ export function fillSubject(s: PlanSubject, blocks: Block[]): { items: Unit[][];
   if (!blocks.length) return { items: out, escala: 1 };
   const examDay = s.examen;
   // Final review: blocks on the day before the exam; simulacro: blocks 2–3 days before.
-  const role = blocks.map((b) => {
+  const role: ('learn' | 'simulacro' | 'corregir' | 'final')[] = blocks.map((b) => {
     const d = daysBetween(b.fecha, examDay);
-    return d <= 1 ? 'final' : d <= 3 ? 'simulacro' : 'learn';
+    return d <= 1 ? 'final' : d === 2 ? 'corregir' : d === 3 ? 'simulacro' : 'learn';
   });
   const learnIdx = blocks.map((_, i) => i).filter((i) => role[i] === 'learn');
   const learnHours = learnIdx.reduce((a, i) => a + blocks[i].horas, 0);
@@ -219,7 +221,8 @@ export function fillSubject(s: PlanSubject, blocks: Block[]): { items: Unit[][];
   }
   const work = units.reduce((a, u) => a + u.horas, 0);
   // Scale to the available time; up to 25% slower if there is spare time (rest -> repaso).
-  const escala = !s.temas.length ? 1 : Math.min(1.25, learnHours / work);
+  // 10 % slack: small leftovers at the end of blocks are absorbed instead of starting new units.
+  const escala = !s.temas.length ? 1 : Math.min(1.5, (learnHours * 0.9) / work);
   if (s.temas.length) units = units.map((u) => ({ ...u, horas: u.horas * escala }));
 
   let ui = 0;
@@ -239,6 +242,11 @@ export function fillSubject(s: PlanSubject, blocks: Block[]): { items: Unit[][];
         ui++;
         left = units[ui]?.horas ?? 0;
         started = false;
+        // Don't start a new unit in the last few minutes of a block: give them to this one.
+        if (cap > EPS && cap < 0.5 && ui < units.length) {
+          out[i][out[i].length - 1].horas += cap;
+          cap = 0;
+        }
       } else {
         left -= take;
         started = true;
@@ -247,9 +255,17 @@ export function fillSubject(s: PlanSubject, blocks: Block[]): { items: Unit[][];
     if (cap > EPS && ui >= units.length) {
       // Spare time: rotating review of temas (or generic study if there are no temas).
       if (s.temas.length) {
-        const t = s.temas[repasoTurn++ % s.temas.length];
-        const ex = t.ejercicios.examen.length ? `ejercicios tipo examen ${range(t.ejercicios.examen)}` : 'los ejercicios';
-        out[i].push({ tema: t.slug, tipo: 'repasar', label: `Repasa «${t.titulo}»: rehaz ${ex} sin mirar la solución`, horas: cap });
+        const turn = repasoTurn++;
+        const t = s.temas[turn % s.temas.length];
+        const ex = t.ejercicios.examen.length ? `los ejercicios tipo examen ${range(t.ejercicios.examen)}` : 'los ejercicios';
+        const med = t.ejercicios.medio.length ? `los ejercicios medios ${range(t.ejercicios.medio)}` : 'los ejercicios';
+        const kinds = [
+          `rehaz ${ex} sin mirar la solución`,
+          `escribe una chuleta de una cara con lo esencial y rehaz ${med}`,
+          `repasa sus tarjetas y explica en voz alta los errores típicos; luego rehaz los ejercicios que fallaste`,
+        ];
+        const kind = kinds[Math.floor(turn / s.temas.length) % kinds.length];
+        out[i].push({ tema: t.slug, tipo: 'repasar', label: `Repasa «${t.titulo}»: ${kind}`, horas: cap });
       } else {
         out[i].push({ tipo: 'aprender', label: `Estudia ${s.abreviatura} con tus apuntes: siguiente tema que tengas pendiente y sus problemas`, horas: cap });
       }
@@ -262,6 +278,14 @@ export function fillSubject(s: PlanSubject, blocks: Block[]): { items: Unit[][];
         label: s.temas.length
           ? `Simulacro: ejercicios tipo examen mezclados de todos los temas, con reloj y sin mirar soluciones; luego corrige`
           : `Simulacro: examen de otros años o problemas de clase, con reloj; luego corrige`,
+        horas: blocks[i].horas,
+      });
+    } else if (role[i] === 'corregir') {
+      out[i].push({
+        tipo: 'repasar',
+        label: s.temas.length
+          ? `Corrige el simulacro y repasa a fondo los temas donde más fallaste (rehaz esos ejercicios)`
+          : `Repasa los problemas que más te cuestan y tus apuntes de los temas flojos`,
         horas: blocks[i].horas,
       });
     } else if (role[i] === 'final') {
@@ -306,7 +330,10 @@ export function generatePlan(input: PlanInput, generado = input.desde): Generate
       items.push({ asignatura: '*', tipo: 'repasar', texto: 'Tarjetas pendientes en la app (10–15 min, mejor al empezar)' });
     }
     // Merge consecutive units with the same subject/tema/tipo/label stem.
-    for (const b of d.blocks) {
+    // Group a subject's blocks together within the day (keeps the order of first appearance).
+    const order = [...new Set(d.blocks.map((b) => b.asignatura))];
+    const blocks = [...d.blocks].sort((a, b) => order.indexOf(a.asignatura) - order.indexOf(b.asignatura));
+    for (const b of blocks) {
       for (const u of filled.get(b) ?? []) {
         const prev = items[items.length - 1];
         const stem = (l: string) => l.replace(/ \((empieza|sigue|termina)\)$/, '');
@@ -348,7 +375,7 @@ export function generatePlan(input: PlanInput, generado = input.desde): Generate
       return s.examen > w.fin && d <= cfg.diasIntensivos - 3;
     });
     const label = examsThisWeek.length
-      ? `Examen${examsThisWeek.length > 1 ? 'es' : ''}: ${examsThisWeek.map((s) => `${s.abreviatura} (${formatShort(s.examen)})`).join(', ')}`
+      ? `${examsThisWeek.length > 1 ? 'Exámenes' : 'Examen'}: ${examsThisWeek.map((s) => `${s.abreviatura} (${formatShort(s.examen)})`).join(', ')}`
       : intensive.length
         ? `Recta final de ${intensive.map((s) => s.abreviatura).join(' y ')}`
         : i === 0
@@ -406,7 +433,7 @@ export function planToMarkdown(plan: Plan, subjects: PlanSubject[], cfg: PlanCon
   L.push('- Cada día empieza con las **tarjetas pendientes** de la app (10–15 min).');
   L.push('- Los bloques son de 1–2 h. Si un bloque se te hace grande, usa **dividir-tarea** para trocearlo en pasos de 15–25 min.');
   L.push('- Si te retrasas, **no intentes recuperarlo todo**: vuelve a ejecutar `npm run plan` (o la skill) y el plan se recalcula desde hoy.');
-  L.push('- Dos o tres días antes de cada examen: **simulacro**. El día antes: **repaso final**, nada nuevo.');
+  L.push('- Tres días antes de cada examen: **simulacro**; dos días antes: **corregirlo** y repasar lo flojo; el día antes: **repaso final**, nada nuevo.');
   const especiales = Object.entries(cfg.diasEspeciales).sort();
   if (especiales.length) L.push(`- Días especiales: ${especiales.map(([d, h]) => `${formatShort(d)} (${formatHours(h)} h)`).join(', ')}.`);
   for (const n of plan.notas ?? []) L.push(`- ⚠️ ${n}`);

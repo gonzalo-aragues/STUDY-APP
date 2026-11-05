@@ -75,3 +75,43 @@ Formato: **decisión** — motivo.
 - **`VITE_BASE` sale del nombre del repo** (`/${{ github.event.repository.name }}/`), así funciona
   aunque renombres el repo. En local el valor por defecto es `/STUDY-APP/`.
 - **Workflow `ci.yml`**: lo mismo sin desplegar, para PRs y otras ramas.
+
+## Contenido de ejemplo (milestone 6)
+
+- **Todo el material es genérico** (`"fuente": "genérico - revisar con apuntes"`): no había ningún
+  apunte en `apuntes/`. Lo hice con la skill **apuntes-a-material** siguiendo sus pasos al pie de la letra.
+- **Nombres completos de IC y FAE supuestos**: "Introducción a los Computadores" y "Fundamentos de
+  Administración de Empresas". **Compruébalos** y corrígelos en su `meta.json` si no son esos.
+- **Dificultad** (pesa en el plan): Cálculo 4, Álgebra 4, PROG1 4, IC 3, FAE 2. Cámbiala si no
+  encaja contigo.
+- **PROG1 en 5 temas** (tipos y expresiones, condicionales, bucles, funciones, vectores) para que
+  el plan y las tareas sean más concretos.
+- **PROG1 usa `std::vector`** y menciona las tablas de C (`int t[N]`), porque no sé cuál usa tu
+  profesor. Míralo en tus apuntes.
+- **Cada solución de PROG1 compila y se ejecuta**: `npm run check-code` (script nuevo) compila con
+  `-Wall -Wextra -Werror` los programas de explicaciones y soluciones y compara la salida con la
+  esperada. Los 49 programas pasan. Las soluciones de mates las comprobé numéricamente con Python.
+- **Mensajes de los programas sin tildes** (consolas de Windows).
+- **Práctica de ejemplo** en `asignaturas/prog1/practicas/00-ejemplo/` (con 4 fallos a propósito)
+  para probar **tutor-practicas**. Bórrala cuando quieras.
+
+## Plan de estudio
+
+- **El reparto lo calcula un script determinista** (`scripts/lib/plan.ts`, con tests) y la skill
+  lo ejecuta y revisa. Así el plan es reproducible y se puede regenerar en segundos si te retrasas.
+- **Días especiales por defecto** en `plan/config.json`: 24 y 31 dic → 2 h; 25 dic y 1 ene → 1 h.
+- **Simulacro 3 días antes, corrección 2 días antes, repaso final el día antes.** El día de un
+  examen solo hay 1,5 h para el siguiente si está a ≤ 4 días (si no, descanso).
+- **Mejoras tras probar la skill con el contenido real**: títulos de apartados resumidos
+  ("de «A» a «C»"), sin fragmentos de 30 min al final de un bloque, bloques de la misma asignatura
+  agrupados en el día, repasos variados en vez de repetir la misma frase.
+
+## Skills: lo que cambié tras probarlas
+
+- **tutor-practicas**: compilar con `-O1 -D_GLIBCXX_ASSERTIONS` además de `-Wall -Wextra`. Lo
+  comprobé con la práctica de ejemplo: sin esas opciones, el código con `suma` sin inicializar y
+  `v[n]` fuera de rango compilaba **sin ningún aviso**. Ejemplo de conversación reescrito sobre ese caso.
+- **apuntes-a-material**: convención `// entrada` / `// salida esperada`, `npm run check-code`,
+  mensajes sin tildes, títulos `##` cortos (los usa el plan), guía de horas por tema.
+- **plan-de-examenes**: documentados `plan/config.json`, la corrección del simulacro y el ejemplo real.
+- **dividir-tarea**: citar títulos exactos y números de ejercicio; dónde aparece en la app.

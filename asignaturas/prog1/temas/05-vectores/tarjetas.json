@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../../schemas/tarjetas.schema.json",
+  "asignatura": "prog1",
+  "tema": "05-vectores",
+  "fuente": "genérico - revisar con apuntes",
+  "tarjetas": [
+    { "id": "def-vector", "tipo": "concepto", "anverso": "¿Qué es un vector en C++?", "reverso": "Una colección de datos del **mismo tipo** con un solo nombre, accesibles por posición: `v[0]`, `v[1]`, …" },
+    { "id": "def-indices", "tipo": "concepto", "anverso": "Si `v` tiene $n$ elementos, ¿qué índices son válidos?", "reverso": "De `0` a `n - 1` (= `v.size() - 1`). `v[n]` está fuera." },
+    { "id": "proc-declarar", "tipo": "procedimiento", "anverso": "Tres formas de crear un `vector<int>`.", "reverso": "`vector<int> v(5);` (5 ceros)\n`vector<int> v(5, 7);` (5 sietes)\n`vector<int> v = {4, 8, 15};`" },
+    { "id": "def-push-back", "tipo": "concepto", "anverso": "¿Qué hace `v.push_back(x)`?", "reverso": "Añade `x` al **final** del vector; el tamaño aumenta en 1." },
+    { "id": "proc-recorrer", "tipo": "procedimiento", "anverso": "Bucle estándar para recorrer un vector con índice.", "reverso": "`for (int i = 0; i < v.size(); i++) { ... v[i] ... }`" },
+    { "id": "proc-leer-vector", "tipo": "procedimiento", "anverso": "¿Cómo lees $n$ enteros en un vector?", "reverso": "`cin >> n;`\n`vector<int> v(n);`\n`for (int i = 0; i < n; i++) cin >> v[i];`" },
+    { "id": "proc-pasar-funcion", "tipo": "procedimiento", "anverso": "¿Cómo pasas un vector a una función para leerlo? ¿Y para modificarlo?", "reverso": "Leer: `const vector<int>& v`.\nModificar: `vector<int>& v`." },
+    { "id": "proc-maximo-posicion", "tipo": "procedimiento", "anverso": "¿Cómo encuentras la posición del máximo?", "reverso": "`int p = 0;`\n`for (int i = 1; i < n; i++)`\n`  if (v[i] > v[p]) p = i;`" },
+    { "id": "proc-buscar", "tipo": "procedimiento", "anverso": "Función de búsqueda lineal.", "reverso": "Recorre `v`; si `v[i] == x`, `return i;`. Al acabar el bucle, `return -1;`." },
+    { "id": "proc-invertir", "tipo": "procedimiento", "anverso": "¿Cómo inviertes un vector sin usar otro?", "reverso": "Para `i` de 0 a `n/2 - 1`, intercambia `v[i]` con `v[n-1-i]`." },
+    { "id": "proc-seleccion", "tipo": "procedimiento", "anverso": "Idea del ordenamiento por selección.", "reverso": "Para cada `i`: busca la posición del mínimo en `v[i..n-1]` e intercámbialo con `v[i]`." },
+    { "id": "proc-contadores", "tipo": "procedimiento", "anverso": "¿Cómo cuentas cuántas veces aparece cada nota del 0 al 10?", "reverso": "`vector<int> cuenta(11, 0);` y por cada nota: `cuenta[nota]++;` (la nota hace de índice)." },
+    { "id": "error-menor-igual", "tipo": "concepto", "anverso": "¿Qué falla en `for (int i = 0; i <= v.size(); i++)`?", "reverso": "Accede a `v[v.size()]`, fuera del vector: basura o fallo. Debe ser `i < v.size()`." },
+    { "id": "error-vector-vacio", "tipo": "concepto", "anverso": "¿Qué pasa con `vector<int> v; v[0] = 5;`?", "reverso": "Error: `v` está vacío y `v[0]` no existe. Usa `vector<int> v(n);` o `v.push_back(5);`." },
+    { "id": "def-at", "tipo": "concepto", "anverso": "¿Diferencia entre `v[i]` y `v.at(i)`?", "reverso": "`v.at(i)` comprueba que `i` es válido y lanza un error claro si no; `v[i]` no comprueba nada." },
+    { "id": "def-tabla-c", "tipo": "concepto", "anverso": "¿Qué es una tabla \"de C\" (`int t[N]`) y en qué se diferencia de `vector`?", "reverso": "Tamaño fijo `N` constante, sin `.size()` ni `push_back`; se lleva aparte cuántos hay ocupados y se pasa como `int t[], int n`." }
+  ]
+}

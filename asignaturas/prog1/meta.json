@@ -19,27 +19,37 @@
     {
       "slug": "01-tipos-y-expresiones",
       "titulo": "Tipos y expresiones",
-      "estado": "pendiente"
+      "estado": "generado",
+      "fuente": "genérico - revisar con apuntes",
+      "horas": 5
     },
     {
       "slug": "02-condicionales",
       "titulo": "Condicionales",
-      "estado": "pendiente"
+      "estado": "generado",
+      "fuente": "genérico - revisar con apuntes",
+      "horas": 4
     },
     {
       "slug": "03-bucles",
       "titulo": "Bucles",
-      "estado": "pendiente"
+      "estado": "generado",
+      "fuente": "genérico - revisar con apuntes",
+      "horas": 6
     },
     {
       "slug": "04-funciones",
       "titulo": "Funciones",
-      "estado": "pendiente"
+      "estado": "generado",
+      "fuente": "genérico - revisar con apuntes",
+      "horas": 6
     },
     {
       "slug": "05-vectores",
       "titulo": "Vectores",
-      "estado": "pendiente"
+      "estado": "generado",
+      "fuente": "genérico - revisar con apuntes",
+      "horas": 7
     }
   ]
 }

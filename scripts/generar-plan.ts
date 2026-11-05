@@ -26,7 +26,7 @@ export function loadTema(subjectDir: string, slug: string, titulo: string, horas
     ? parseFrontMatter(expl)
         .body.split('\n')
         .filter((l) => /^##\s+/.test(l) && !/^###/.test(l))
-        .map((l) => l.replace(/^##\s+/, '').replace(/^\d+[.)]\s*/, '').trim())
+        .map((l) => l.replace(/^##\s+/, '').replace(/^\d+[.)]\s*/, '').replace(/\$([^$]+)\$/g, '$1').trim())
         .filter((l) => !/^(errores|resumen|para llevar|en resumen|qué viene|chuleta)/i.test(l))
     : [];
   const blocks = ej ? parseExercises(ej).blocks : [];

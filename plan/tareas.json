@@ -1,0 +1,40 @@
+{
+  "$schema": "../schemas/tareas.schema.json",
+  "tareas": [
+    {
+      "id": "algebra-estructuras-20261105",
+      "titulo": "Estudiar el tema 2 de Álgebra (estructuras algebraicas)",
+      "asignatura": "algebra",
+      "tema": "02-estructuras-algebraicas",
+      "creada": "2026-11-05",
+      "pasos": [
+        { "id": "p1", "texto": "Lee «En una frase» y «Lo que necesitas saber antes» (solo eso)", "minutos": 15, "detalle": "Hecho = sabes leer en voz alta ∈, ∀, ∃ y G×G.", "enlace": "#/asignaturas/algebra/02-estructuras-algebraicas" },
+        { "id": "p2", "texto": "Lee «Primera idea: ¿qué es una operación?» y escribe 2 ejemplos y 2 contraejemplos tuyos de operación interna", "minutos": 20, "enlace": "#/asignaturas/algebra/02-estructuras-algebraicas" },
+        { "id": "p3", "texto": "Haz los ejercicios 1 y 2 (básicos) y compáralos con la solución", "minutos": 20, "enlace": "#/asignaturas/algebra/02-estructuras-algebraicas/ejercicios" },
+        { "id": "p4", "texto": "Lee «Las propiedades, una a una» y «Grupo»; copia a mano la tabla de ejemplos de grupos", "minutos": 25, "enlace": "#/asignaturas/algebra/02-estructuras-algebraicas" },
+        { "id": "p5", "texto": "Haz el ejercicio 4 (¿cuáles son grupos?) sin mirar la explicación", "minutos": 15, "enlace": "#/asignaturas/algebra/02-estructuras-algebraicas/ejercicios" },
+        { "id": "p6", "texto": "Lee «Los enteros módulo n» y haz los ejercicios 3 y 5 (tablas y cuentas en Z₅ y Z₆)", "minutos": 25, "enlace": "#/asignaturas/algebra/02-estructuras-algebraicas/ejercicios" },
+        { "id": "p7", "texto": "Haz el ejercicio 6 (operación a*b = a+b+2) siguiendo el ejemplo 2 de la explicación", "minutos": 20, "enlace": "#/asignaturas/algebra/02-estructuras-algebraicas/ejercicios" },
+        { "id": "p8", "texto": "Lee «Anillo», «Cuerpo» y el resumen visual", "minutos": 20, "enlace": "#/asignaturas/algebra/02-estructuras-algebraicas" },
+        { "id": "p9", "texto": "Haz los ejercicios 8 y 9 (unidades y divisores de cero en Z₈; ¿es Z₅ cuerpo?)", "minutos": 25, "enlace": "#/asignaturas/algebra/02-estructuras-algebraicas/ejercicios" },
+        { "id": "p10", "texto": "Repasa las tarjetas del tema en la app", "minutos": 15, "enlace": "#/repasar?asignatura=algebra&tema=02-estructuras-algebraicas" },
+        { "id": "p11", "texto": "Comprobación: haz el ejercicio 11 (tipo examen) con reloj y sin mirar nada", "minutos": 25, "detalle": "Hecho = lo has corregido con la solución y apuntado qué fallaste.", "enlace": "#/asignaturas/algebra/02-estructuras-algebraicas/ejercicios" }
+      ]
+    },
+    {
+      "id": "prog1-tipos-20261105",
+      "titulo": "Arrancar PROG1: tema 1 (tipos y expresiones)",
+      "asignatura": "prog1",
+      "tema": "01-tipos-y-expresiones",
+      "creada": "2026-11-05",
+      "pasos": [
+        { "id": "p1", "texto": "Abre el compilador o el IDE de clase y compila el «primer programa» de la explicación", "minutos": 15, "detalle": "Hecho = ves el mensaje en pantalla.", "enlace": "#/asignaturas/prog1/01-tipos-y-expresiones" },
+        { "id": "p2", "texto": "Lee «Tipos básicos» y «Expresiones y operadores»", "minutos": 20, "enlace": "#/asignaturas/prog1/01-tipos-y-expresiones" },
+        { "id": "p3", "texto": "Haz los ejercicios 1 y 4 (qué imprime / prioridad) en papel y compruébalos compilando", "minutos": 20, "enlace": "#/asignaturas/prog1/01-tipos-y-expresiones/ejercicios" },
+        { "id": "p4", "texto": "Programa los ejercicios 2 y 5 y pruébalos con la entrada de ejemplo", "minutos": 25, "enlace": "#/asignaturas/prog1/01-tipos-y-expresiones/ejercicios" },
+        { "id": "p5", "texto": "Programa el ejercicio 6 (segundos a h/min/s)", "minutos": 20, "enlace": "#/asignaturas/prog1/01-tipos-y-expresiones/ejercicios" },
+        { "id": "p6", "texto": "Repasa las tarjetas del tema en la app", "minutos": 15, "enlace": "#/repasar?asignatura=prog1&tema=01-tipos-y-expresiones" }
+      ]
+    }
+  ]
+}

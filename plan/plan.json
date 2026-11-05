@@ -1,0 +1,2086 @@
+{
+  "$schema": "../schemas/plan.schema.json",
+  "generado": "2026-11-05",
+  "desde": "2026-11-05",
+  "hasta": "2027-01-16",
+  "horasPorDia": 3,
+  "notas": [],
+  "semanas": [
+    {
+      "inicio": "2026-11-02",
+      "fin": "2026-11-08",
+      "titulo": "Semana 1 · Arranque: ponerse en marcha con todo",
+      "dias": [
+        {
+          "fecha": "2026-11-05",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "01-tipos-y-expresiones",
+              "tipo": "aprender",
+              "texto": "«Tipos y expresiones»: lee la explicación (1/2), de «Lo que necesitas saber antes» a «Tipos básicos»",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "aprender",
+              "texto": "«Matrices y sistemas lineales»: lee la explicación (1/3), de «Lo que necesitas saber antes» a «Matrices: definición y tipos» (empieza)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-06",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "aprender",
+              "texto": "«Números complejos»: lee la explicación (1/3), de «Lo que necesitas saber antes» a «Definición formal»",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "preparar",
+              "texto": "Organiza el material de IC: deja tus apuntes en asignaturas/ic/apuntes/, añade los temas a meta.json y ejecuta apuntes-a-material",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-07",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "01-tipos-y-expresiones",
+              "tipo": "aprender",
+              "texto": "«Tipos y expresiones»: lee la explicación (2/2), de «Expresiones y operadores» a «Ejemplos resueltos»",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "preparar",
+              "texto": "Organiza el material de FAE: deja tus apuntes en asignaturas/fae/apuntes/, añade los temas a meta.json y ejecuta apuntes-a-material",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-08",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "aprender",
+              "texto": "«Matrices y sistemas lineales»: lee la explicación (1/3), de «Lo que necesitas saber antes» a «Matrices: definición y tipos» (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "aprender",
+              "texto": "«Matrices y sistemas lineales»: lee la explicación (2/3), de «Operaciones» a «Matriz inversa» (empieza)",
+              "horas": 1
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "aprender",
+              "texto": "«Números complejos»: lee la explicación (2/3), de «Operaciones en forma binómica» a «Producto, cociente y potencias en polar»",
+              "horas": 1.5
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: PROG1 3 h · Álgebra 3 h · Cálculo 3 h · IC 1,5 h · FAE 1,5 h"
+    },
+    {
+      "inicio": "2026-11-09",
+      "fin": "2026-11-15",
+      "titulo": "Semana 2 · Ponerse al día",
+      "dias": [
+        {
+          "fecha": "2026-11-09",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "01-tipos-y-expresiones",
+              "tipo": "practicar",
+              "texto": "«Tipos y expresiones»: ejercicios básicos 1–5",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-10",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "01-tipos-y-expresiones",
+              "tipo": "practicar",
+              "texto": "«Tipos y expresiones»: ejercicios de nivel medio 6–9",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "aprender",
+              "texto": "«Matrices y sistemas lineales»: lee la explicación (2/3), de «Operaciones» a «Matriz inversa» (termina)",
+              "horas": 1
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "aprender",
+              "texto": "«Matrices y sistemas lineales»: lee la explicación (3/3), de «Rango» a «Ejemplos resueltos» (empieza)",
+              "horas": 0.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-11",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "aprender",
+              "texto": "«Números complejos»: lee la explicación (3/3), de «Raíces n-ésimas» a «Ejemplos resueltos»",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-12",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "01-tipos-y-expresiones",
+              "tipo": "practicar",
+              "texto": "«Tipos y expresiones»: ejercicios tipo examen 10–12",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "aprender",
+              "texto": "«Matrices y sistemas lineales»: lee la explicación (3/3), de «Rango» a «Ejemplos resueltos» (termina)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-13",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "practicar",
+              "texto": "«Números complejos»: ejercicios básicos 1–5 (empieza)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-14",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "02-condicionales",
+              "tipo": "aprender",
+              "texto": "«Condicionales»: lee la explicación, de «Lo que necesitas saber antes» a «Ejemplos resueltos» (empieza)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "practicar",
+              "texto": "«Matrices y sistemas lineales»: ejercicios básicos 1–5 (empieza)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-15",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "02-condicionales",
+              "tipo": "aprender",
+              "texto": "«Condicionales»: lee la explicación, de «Lo que necesitas saber antes» a «Ejemplos resueltos» (termina)",
+              "horas": 1
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "02-condicionales",
+              "tipo": "practicar",
+              "texto": "«Condicionales»: ejercicios básicos 1–5 (empieza)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "practicar",
+              "texto": "«Números complejos»: ejercicios básicos 1–5 (termina)",
+              "horas": 1
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "practicar",
+              "texto": "«Números complejos»: ejercicios de nivel medio 6–10 (empieza)",
+              "horas": 0.5
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: PROG1 7,5 h · Álgebra 4,5 h · Cálculo 4,5 h · IC 3 h · FAE 1,5 h"
+    },
+    {
+      "inicio": "2026-11-16",
+      "fin": "2026-11-22",
+      "titulo": "Semana 3 · Ponerse al día",
+      "dias": [
+        {
+          "fecha": "2026-11-16",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "02-condicionales",
+              "tipo": "practicar",
+              "texto": "«Condicionales»: ejercicios básicos 1–5 (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "02-condicionales",
+              "tipo": "practicar",
+              "texto": "«Condicionales»: ejercicios de nivel medio 6–9 (empieza)",
+              "horas": 1
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-17",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "practicar",
+              "texto": "«Matrices y sistemas lineales»: ejercicios básicos 1–5 (termina)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-18",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "02-condicionales",
+              "tipo": "practicar",
+              "texto": "«Condicionales»: ejercicios de nivel medio 6–9 (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "02-condicionales",
+              "tipo": "practicar",
+              "texto": "«Condicionales»: ejercicios tipo examen 10–12",
+              "horas": 1
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "practicar",
+              "texto": "«Números complejos»: ejercicios de nivel medio 6–10 (sigue)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-19",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "aprender",
+              "texto": "«Bucles»: lee la explicación (1/2), de «Lo que necesitas saber antes» a «`do-while`: al menos una vez» (empieza)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "practicar",
+              "texto": "«Matrices y sistemas lineales»: ejercicios de nivel medio 6–10 (empieza)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-20",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "practicar",
+              "texto": "«Números complejos»: ejercicios de nivel medio 6–10 (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "practicar",
+              "texto": "«Números complejos»: ejercicios tipo examen 11–13 (empieza)",
+              "horas": 1
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-21",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "aprender",
+              "texto": "«Bucles»: lee la explicación (1/2), de «Lo que necesitas saber antes» a «`do-while`: al menos una vez» (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "aprender",
+              "texto": "«Bucles»: lee la explicación (2/2), de «`for`: cuando sabes cuántas vueltas» a «Ejemplos resueltos» (empieza)",
+              "horas": 1
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "practicar",
+              "texto": "«Matrices y sistemas lineales»: ejercicios de nivel medio 6–10 (sigue)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-22",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "aprender",
+              "texto": "«Bucles»: lee la explicación (2/2), de «`for`: cuando sabes cuántas vueltas» a «Ejemplos resueltos» (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "practicar",
+              "texto": "«Bucles»: ejercicios básicos 1–5 (empieza)",
+              "horas": 1
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: PROG1 7,5 h · Álgebra 4,5 h · IC 3 h · FAE 3 h · Cálculo 3 h"
+    },
+    {
+      "inicio": "2026-11-23",
+      "fin": "2026-11-29",
+      "titulo": "Semana 4 · Ponerse al día",
+      "dias": [
+        {
+          "fecha": "2026-11-23",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "practicar",
+              "texto": "«Números complejos»: ejercicios tipo examen 11–13 (termina)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-24",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "practicar",
+              "texto": "«Bucles»: ejercicios básicos 1–5 (termina)",
+              "horas": 1
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "practicar",
+              "texto": "«Bucles»: ejercicios de nivel medio 6–9 (empieza)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "practicar",
+              "texto": "«Matrices y sistemas lineales»: ejercicios de nivel medio 6–10 (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "practicar",
+              "texto": "«Matrices y sistemas lineales»: ejercicios tipo examen 11–13 (empieza)",
+              "horas": 1
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-25",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "practicar",
+              "texto": "«Bucles»: ejercicios de nivel medio 6–9 (termina)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "aprender",
+              "texto": "«Sucesiones»: lee la explicación (1/3), de «Lo que necesitas saber antes» a «Definición formal»",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-26",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "practicar",
+              "texto": "«Matrices y sistemas lineales»: ejercicios tipo examen 11–13 (termina)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "practicar",
+              "texto": "«Bucles»: ejercicios tipo examen 10–12",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-27",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-28",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "aprender",
+              "texto": "«Funciones»: lee la explicación (1/2), de «Lo que necesitas saber antes» a «Dónde se escriben: prototipos» (empieza)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "aprender",
+              "texto": "«Sucesiones»: lee la explicación (2/3), de «Propiedades: monotonía y acotación» a «Órdenes de magnitud (quién gana en el infinito)»",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-11-29",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "aprender",
+              "texto": "«Estructuras algebraicas»: lee la explicación (1/3), de «Lo que necesitas saber antes» a «Las propiedades, una a una» (empieza)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "aprender",
+              "texto": "«Funciones»: lee la explicación (1/2), de «Lo que necesitas saber antes» a «Dónde se escriben: prototipos» (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "aprender",
+              "texto": "«Funciones»: lee la explicación (2/2), de «Paso por valor y por referencia» a «Ejemplos resueltos» (empieza)",
+              "horas": 1
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: PROG1 7,5 h · Cálculo 4,5 h · Álgebra 4,5 h · IC 3 h · FAE 1,5 h"
+    },
+    {
+      "inicio": "2026-11-30",
+      "fin": "2026-12-06",
+      "titulo": "Semana 5 · Ponerse al día",
+      "dias": [
+        {
+          "fecha": "2026-11-30",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "aprender",
+              "texto": "«Sucesiones»: lee la explicación (3/3), «Criterios útiles» y «Ejemplos resueltos»",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-01",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "aprender",
+              "texto": "«Funciones»: lee la explicación (2/2), de «Paso por valor y por referencia» a «Ejemplos resueltos» (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "practicar",
+              "texto": "«Funciones»: ejercicios básicos 1–5 (empieza)",
+              "horas": 1
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "aprender",
+              "texto": "«Estructuras algebraicas»: lee la explicación (1/3), de «Lo que necesitas saber antes» a «Las propiedades, una a una» (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "aprender",
+              "texto": "«Estructuras algebraicas»: lee la explicación (2/3), de «Grupo» a «Anillo» (empieza)",
+              "horas": 1
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-02",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "practicar",
+              "texto": "«Funciones»: ejercicios básicos 1–5 (termina)",
+              "horas": 1
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "practicar",
+              "texto": "«Funciones»: ejercicios de nivel medio 6–9 (empieza)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-03",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "practicar",
+              "texto": "«Sucesiones»: ejercicios básicos 1–5 (empieza)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "practicar",
+              "texto": "«Funciones»: ejercicios de nivel medio 6–9 (termina)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-04",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "aprender",
+              "texto": "«Estructuras algebraicas»: lee la explicación (2/3), de «Grupo» a «Anillo» (termina)",
+              "horas": 1
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "aprender",
+              "texto": "«Estructuras algebraicas»: lee la explicación (3/3), «Cuerpo» y «Ejemplos resueltos» (empieza)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "practicar",
+              "texto": "«Funciones»: ejercicios tipo examen 10–12",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-05",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "practicar",
+              "texto": "«Sucesiones»: ejercicios básicos 1–5 (termina)",
+              "horas": 1
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "practicar",
+              "texto": "«Sucesiones»: ejercicios de nivel medio 6–10 (empieza)",
+              "horas": 0.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-06",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "aprender",
+              "texto": "«Vectores»: lee la explicación (1/2), de «Lo que necesitas saber antes» a «`vector` de la biblioteca estándar» (empieza)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "aprender",
+              "texto": "«Estructuras algebraicas»: lee la explicación (3/3), «Cuerpo» y «Ejemplos resueltos» (termina)",
+              "horas": 1.5
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: PROG1 7,5 h · Cálculo 4,5 h · Álgebra 4,5 h · IC 3 h · FAE 1,5 h"
+    },
+    {
+      "inicio": "2026-12-07",
+      "fin": "2026-12-13",
+      "titulo": "Semana 6 · Ponerse al día",
+      "dias": [
+        {
+          "fecha": "2026-12-07",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "aprender",
+              "texto": "«Vectores»: lee la explicación (1/2), de «Lo que necesitas saber antes» a «`vector` de la biblioteca estándar» (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "aprender",
+              "texto": "«Vectores»: lee la explicación (2/2), de «Vectores y funciones» a «Ejemplos resueltos» (empieza)",
+              "horas": 1
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-08",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "aprender",
+              "texto": "«Vectores»: lee la explicación (2/2), de «Vectores y funciones» a «Ejemplos resueltos» (termina)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "practicar",
+              "texto": "«Sucesiones»: ejercicios de nivel medio 6–10 (sigue)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-09",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "practicar",
+              "texto": "«Estructuras algebraicas»: ejercicios básicos 1–5 (empieza)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "practicar",
+              "texto": "«Vectores»: ejercicios básicos 1–5 (empieza)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-10",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "practicar",
+              "texto": "«Vectores»: ejercicios básicos 1–5 (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "practicar",
+              "texto": "«Vectores»: ejercicios de nivel medio 6–9 (empieza)",
+              "horas": 1
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-11",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "practicar",
+              "texto": "«Vectores»: ejercicios de nivel medio 6–9 (termina)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "practicar",
+              "texto": "«Sucesiones»: ejercicios de nivel medio 6–10 (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "practicar",
+              "texto": "«Sucesiones»: ejercicios tipo examen 11–13 (empieza)",
+              "horas": 1
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-12",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "practicar",
+              "texto": "«Vectores»: ejercicios tipo examen 10–12",
+              "horas": 2
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "01-tipos-y-expresiones",
+              "tipo": "repasar",
+              "texto": "Repasa «Tipos y expresiones»: rehaz los ejercicios tipo examen 10–12 sin mirar la solución",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "02-condicionales",
+              "tipo": "repasar",
+              "texto": "Repasa «Condicionales»: rehaz los ejercicios tipo examen 10–12 sin mirar la solución",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "practicar",
+              "texto": "«Estructuras algebraicas»: ejercicios básicos 1–5 (termina)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-13",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "repasar",
+              "texto": "Repasa «Bucles»: rehaz los ejercicios tipo examen 10–12 sin mirar la solución",
+              "horas": 2
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "repasar",
+              "texto": "Repasa «Funciones»: rehaz los ejercicios tipo examen 10–12 sin mirar la solución",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: PROG1 15 h · Cálculo 3 h · Álgebra 3 h · IC 3 h · FAE 1,5 h"
+    },
+    {
+      "inicio": "2026-12-14",
+      "fin": "2026-12-20",
+      "titulo": "Semana 7 · Recta final de PROG1",
+      "dias": [
+        {
+          "fecha": "2026-12-14",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "repasar",
+              "texto": "Repasa «Vectores»: rehaz los ejercicios tipo examen 10–12 sin mirar la solución",
+              "horas": 2
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "practicar",
+              "texto": "«Estructuras algebraicas»: ejercicios de nivel medio 6–10 (empieza)",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "practicar",
+              "texto": "«Sucesiones»: ejercicios tipo examen 11–13 (termina)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-15",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "01-tipos-y-expresiones",
+              "tipo": "repasar",
+              "texto": "Repasa «Tipos y expresiones»: escribe una chuleta de una cara con lo esencial y rehaz los ejercicios medios 6–9",
+              "horas": 2
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "02-condicionales",
+              "tipo": "repasar",
+              "texto": "Repasa «Condicionales»: escribe una chuleta de una cara con lo esencial y rehaz los ejercicios medios 6–9",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-16",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "repasar",
+              "texto": "Repasa «Bucles»: escribe una chuleta de una cara con lo esencial y rehaz los ejercicios medios 6–9",
+              "horas": 2
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "repasar",
+              "texto": "Repasa «Funciones»: escribe una chuleta de una cara con lo esencial y rehaz los ejercicios medios 6–9",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "05-vectores",
+              "tipo": "repasar",
+              "texto": "Repasa «Vectores»: escribe una chuleta de una cara con lo esencial y rehaz los ejercicios medios 6–9",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-17",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "01-tipos-y-expresiones",
+              "tipo": "repasar",
+              "texto": "Repasa «Tipos y expresiones»: repasa sus tarjetas y explica en voz alta los errores típicos; luego rehaz los ejercicios que fallaste",
+              "horas": 2
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "02-condicionales",
+              "tipo": "repasar",
+              "texto": "Repasa «Condicionales»: repasa sus tarjetas y explica en voz alta los errores típicos; luego rehaz los ejercicios que fallaste",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "practicar",
+              "texto": "«Estructuras algebraicas»: ejercicios de nivel medio 6–10 (sigue)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-18",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "03-bucles",
+              "tipo": "repasar",
+              "texto": "Repasa «Bucles»: repasa sus tarjetas y explica en voz alta los errores típicos; luego rehaz los ejercicios que fallaste",
+              "horas": 2
+            },
+            {
+              "asignatura": "prog1",
+              "tema": "04-funciones",
+              "tipo": "repasar",
+              "texto": "Repasa «Funciones»: repasa sus tarjetas y explica en voz alta los errores típicos; luego rehaz los ejercicios que fallaste",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "aprender",
+              "texto": "«Series»: lee la explicación (1/3), de «Lo que necesitas saber antes» a «Condición necesaria (el primer filtro)» (empieza)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-19",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tipo": "simulacro",
+              "texto": "Simulacro: ejercicios tipo examen mezclados de todos los temas, con reloj y sin mirar soluciones; luego corrige",
+              "horas": 3.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-20",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tipo": "repasar",
+              "texto": "Corrige el simulacro y repasa a fondo los temas donde más fallaste (rehaz esos ejercicios)",
+              "horas": 5
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: PROG1 26 h · Álgebra 3 h · Cálculo 3 h · FAE 1,5 h · IC 1,5 h"
+    },
+    {
+      "inicio": "2026-12-21",
+      "fin": "2026-12-27",
+      "titulo": "Semana 8 · Examen: PROG1 (mar 22 dic)",
+      "dias": [
+        {
+          "fecha": "2026-12-21",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "prog1",
+              "tipo": "repasar",
+              "texto": "Repaso final: tarjetas, fórmulas y los errores que más repites. Nada nuevo; duerme bien",
+              "horas": 5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-22",
+          "horas": 0,
+          "items": [
+            {
+              "asignatura": "prog1",
+              "tipo": "examen",
+              "texto": "¡Examen de PROG1! Por la mañana solo un repaso ligero de tarjetas. Suerte."
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-23",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "practicar",
+              "texto": "«Estructuras algebraicas»: ejercicios de nivel medio 6–10 (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "practicar",
+              "texto": "«Estructuras algebraicas»: ejercicios tipo examen 11–13 (empieza)",
+              "horas": 1
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "aprender",
+              "texto": "«Series»: lee la explicación (1/3), de «Lo que necesitas saber antes» a «Condición necesaria (el primer filtro)» (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "aprender",
+              "texto": "«Series»: lee la explicación (2/3), de «Las dos series que sí sabemos sumar» a «Series alternadas y convergencia absoluta» (empieza)",
+              "horas": 1
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-24",
+          "horas": 2,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 2
+            }
+          ],
+          "nota": "Día especial (festivo): menos horas"
+        },
+        {
+          "fecha": "2026-12-25",
+          "horas": 1,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "practicar",
+              "texto": "«Estructuras algebraicas»: ejercicios tipo examen 11–13 (sigue)",
+              "horas": 1
+            }
+          ],
+          "nota": "Día especial (festivo): menos horas"
+        },
+        {
+          "fecha": "2026-12-26",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "aprender",
+              "texto": "«Series»: lee la explicación (2/3), de «Las dos series que sí sabemos sumar» a «Series alternadas y convergencia absoluta» (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "aprender",
+              "texto": "«Series»: lee la explicación (3/3), «¿Qué criterio uso? (diagrama mental)» y «Ejemplos resueltos» (empieza)",
+              "horas": 1
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-27",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "practicar",
+              "texto": "«Estructuras algebraicas»: ejercicios tipo examen 11–13 (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "repasar",
+              "texto": "Repasa «Matrices y sistemas lineales»: rehaz los ejercicios tipo examen 11–13 sin mirar la solución",
+              "horas": 1
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "repasar",
+              "texto": "Repasa «Estructuras algebraicas»: rehaz los ejercicios tipo examen 11–13 sin mirar la solución",
+              "horas": 1.5
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: Álgebra 5,5 h · PROG1 5 h · Cálculo 3 h · FAE 2 h · IC 1,5 h"
+    },
+    {
+      "inicio": "2026-12-28",
+      "fin": "2027-01-03",
+      "titulo": "Semana 9 · Recta final de Álgebra",
+      "dias": [
+        {
+          "fecha": "2026-12-28",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "aprender",
+              "texto": "«Series»: lee la explicación (3/3), «¿Qué criterio uso? (diagrama mental)» y «Ejemplos resueltos» (termina)",
+              "horas": 1
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "practicar",
+              "texto": "«Series»: ejercicios básicos 1–5 (empieza)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-29",
+          "horas": 3,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "repasar",
+              "texto": "Repasa «Matrices y sistemas lineales»: escribe una chuleta de una cara con lo esencial y rehaz los ejercicios medios 6–10",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "practicar",
+              "texto": "«Series»: ejercicios básicos 1–5 (sigue)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-30",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "repasar",
+              "texto": "Repasa «Estructuras algebraicas»: escribe una chuleta de una cara con lo esencial y rehaz los ejercicios medios 6–10",
+              "horas": 2
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "repasar",
+              "texto": "Repasa «Matrices y sistemas lineales»: repasa sus tarjetas y explica en voz alta los errores típicos; luego rehaz los ejercicios que fallaste",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2026-12-31",
+          "horas": 2,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "practicar",
+              "texto": "«Series»: ejercicios básicos 1–5 (termina)",
+              "horas": 0.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "practicar",
+              "texto": "«Series»: ejercicios de nivel medio 6–10 (empieza)",
+              "horas": 1.5
+            }
+          ],
+          "nota": "Día especial (festivo): menos horas"
+        },
+        {
+          "fecha": "2027-01-01",
+          "horas": 1,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "repasar",
+              "texto": "Repasa «Estructuras algebraicas»: repasa sus tarjetas y explica en voz alta los errores típicos; luego rehaz los ejercicios que fallaste",
+              "horas": 1
+            }
+          ],
+          "nota": "Día especial (festivo): menos horas"
+        },
+        {
+          "fecha": "2027-01-02",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "repasar",
+              "texto": "Repasa «Matrices y sistemas lineales»: rehaz los ejercicios tipo examen 11–13 sin mirar la solución",
+              "horas": 2
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "practicar",
+              "texto": "«Series»: ejercicios de nivel medio 6–10 (termina)",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-03",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "repasar",
+              "texto": "Repasa «Estructuras algebraicas»: rehaz los ejercicios tipo examen 11–13 sin mirar la solución",
+              "horas": 2
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "repasar",
+              "texto": "Repasa «Matrices y sistemas lineales»: escribe una chuleta de una cara con lo esencial y rehaz los ejercicios medios 6–10",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "practicar",
+              "texto": "«Series»: ejercicios tipo examen 11–13 (empieza)",
+              "horas": 1.5
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: Álgebra 11,5 h · Cálculo 8 h · IC 3 h · FAE 1,5 h"
+    },
+    {
+      "inicio": "2027-01-04",
+      "fin": "2027-01-10",
+      "titulo": "Semana 10 · Examen: Álgebra (sáb 9 ene)",
+      "dias": [
+        {
+          "fecha": "2027-01-04",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "02-estructuras-algebraicas",
+              "tipo": "repasar",
+              "texto": "Repasa «Estructuras algebraicas»: escribe una chuleta de una cara con lo esencial y rehaz los ejercicios medios 6–10",
+              "horas": 2
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "practicar",
+              "texto": "«Series»: ejercicios tipo examen 11–13 (termina)",
+              "horas": 1
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "repasar",
+              "texto": "Repasa «Números complejos»: rehaz los ejercicios tipo examen 11–13 sin mirar la solución",
+              "horas": 0.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-05",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tema": "01-matrices-y-sistemas-lineales",
+              "tipo": "repasar",
+              "texto": "Repasa «Matrices y sistemas lineales»: repasa sus tarjetas y explica en voz alta los errores típicos; luego rehaz los ejercicios que fallaste",
+              "horas": 2
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "02-sucesiones",
+              "tipo": "repasar",
+              "texto": "Repasa «Sucesiones»: rehaz los ejercicios tipo examen 11–13 sin mirar la solución",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-06",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tipo": "simulacro",
+              "texto": "Simulacro: ejercicios tipo examen mezclados de todos los temas, con reloj y sin mirar soluciones; luego corrige",
+              "horas": 3.5
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "03-series",
+              "tipo": "repasar",
+              "texto": "Repasa «Series»: rehaz los ejercicios tipo examen 11–13 sin mirar la solución",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-07",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tipo": "repasar",
+              "texto": "Corrige el simulacro y repasa a fondo los temas donde más fallaste (rehaz esos ejercicios)",
+              "horas": 3.5
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-08",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "algebra",
+              "tipo": "repasar",
+              "texto": "Repaso final: tarjetas, fórmulas y los errores que más repites. Nada nuevo; duerme bien",
+              "horas": 2
+            },
+            {
+              "asignatura": "calculo",
+              "tema": "01-numeros-complejos",
+              "tipo": "repasar",
+              "texto": "Repasa «Números complejos»: escribe una chuleta de una cara con lo esencial y rehaz los ejercicios medios 6–10",
+              "horas": 1.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-09",
+          "horas": 1.5,
+          "items": [
+            {
+              "asignatura": "algebra",
+              "tipo": "examen",
+              "texto": "¡Examen de Álgebra! Por la mañana solo un repaso ligero de tarjetas. Suerte."
+            },
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tipo": "simulacro",
+              "texto": "Simulacro: ejercicios tipo examen mezclados de todos los temas, con reloj y sin mirar soluciones; luego corrige",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-10",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tipo": "repasar",
+              "texto": "Corrige el simulacro y repasa a fondo los temas donde más fallaste (rehaz esos ejercicios)",
+              "horas": 3.5
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "aprender",
+              "texto": "Estudia FAE con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: Álgebra 13 h · Cálculo 11 h · FAE 4,5 h · IC 3 h"
+    },
+    {
+      "inicio": "2027-01-11",
+      "fin": "2027-01-17",
+      "titulo": "Semana 11 · Exámenes: Cálculo (mar 12 ene), FAE (jue 14 ene), IC (sáb 16 ene)",
+      "dias": [
+        {
+          "fecha": "2027-01-11",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "calculo",
+              "tipo": "repasar",
+              "texto": "Repaso final: tarjetas, fórmulas y los errores que más repites. Nada nuevo; duerme bien",
+              "horas": 3.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "aprender",
+              "texto": "Estudia IC con tus apuntes: siguiente tema que tengas pendiente y sus problemas",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-12",
+          "horas": 1.5,
+          "items": [
+            {
+              "asignatura": "calculo",
+              "tipo": "examen",
+              "texto": "¡Examen de Cálculo! Por la mañana solo un repaso ligero de tarjetas. Suerte."
+            },
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "repasar",
+              "texto": "Repasa los problemas que más te cuestan y tus apuntes de los temas flojos",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-13",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "fae",
+              "tipo": "repasar",
+              "texto": "Repaso final: tarjetas, fórmulas y los errores que más repites. Nada nuevo; duerme bien",
+              "horas": 3.5
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "simulacro",
+              "texto": "Simulacro: examen de otros años o problemas de clase, con reloj; luego corrige",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-14",
+          "horas": 1.5,
+          "items": [
+            {
+              "asignatura": "fae",
+              "tipo": "examen",
+              "texto": "¡Examen de FAE! Por la mañana solo un repaso ligero de tarjetas. Suerte."
+            },
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "repasar",
+              "texto": "Repasa los problemas que más te cuestan y tus apuntes de los temas flojos",
+              "horas": 1.5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-15",
+          "horas": 5,
+          "items": [
+            {
+              "asignatura": "*",
+              "tipo": "repasar",
+              "texto": "Tarjetas pendientes en la app (10–15 min, mejor al empezar)"
+            },
+            {
+              "asignatura": "ic",
+              "tipo": "repasar",
+              "texto": "Repaso final: tarjetas, fórmulas y los errores que más repites. Nada nuevo; duerme bien",
+              "horas": 5
+            }
+          ]
+        },
+        {
+          "fecha": "2027-01-16",
+          "horas": 0,
+          "items": [
+            {
+              "asignatura": "ic",
+              "tipo": "examen",
+              "texto": "¡Examen de IC! Por la mañana solo un repaso ligero de tarjetas. Suerte."
+            }
+          ]
+        }
+      ],
+      "objetivo": "Reparto: IC 9,5 h · FAE 5 h · Cálculo 3,5 h"
+    }
+  ]
+}

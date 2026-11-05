@@ -29,6 +29,8 @@ da pereza**: se puede hacer en 15–25 minutos, empieza por un verbo y al termin
    - Termina con un paso de **comprobación** (ejercicio tipo examen sin mirar la solución, o
      explicar el tema en 5 líneas sin mirar).
    - `detalle` (opcional): una línea con el cómo o el criterio de "hecho".
+   - Cita los **títulos exactos** de los apartados (`«Grupo»`) y los **números** de ejercicio:
+     así el paso se puede empezar sin pensar.
    - `enlace` (opcional): ruta de la app al material: `#/asignaturas/<slug>/<tema>` (explicación),
      `#/asignaturas/<slug>/<tema>/ejercicios`, o `#/repasar?asignatura=<slug>&tema=<tema>` (tarjetas).
 
@@ -39,7 +41,9 @@ da pereza**: se puede hacer en 15–25 minutos, empieza por un verbo y al termin
    - `id` de paso: `p1`, `p2`, …
    - `creada`: fecha de hoy. Tareas viejas ya hechas: puedes poner `"archivada": true` si te lo pido.
 
-5. **Valida:** `npm run validate`. Haz commit + push para que aparezca en la app.
+5. **Valida:** `npm run validate` (comprueba ids repetidos, minutos 10–30 y que la asignatura
+   exista). Haz commit + push para que aparezca en la app: en **Tareas** se marcan los pasos y en
+   **Hoy** sale el siguiente paso pendiente de cada tarea.
 
 6. **Respóndeme** con la lista numerada de pasos (texto + minutos) y el total, y dime cuál es el
    primero: "Empieza ya con el paso 1, son 15 minutos".

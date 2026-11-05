@@ -53,6 +53,8 @@ tests/                                        tests (vitest)
   `### Ejercicio N` (opcional `. Título`). La numeración es **global** en el tema (1, 2, 3… sin saltos).
   No uses `##` dentro de un ejercicio (cerraría la sección).
 - **soluciones.md**: `### Solución N` con el **mismo N**. Soluciones completas, paso a paso.
+  En programación, cada programa completo va seguido de bloques ```` ```text ```` que empiezan por
+  `// entrada` y `// salida esperada` (los usa `npm run check-code`).
   Las soluciones van **siempre en un fichero aparte**; la app las muestra plegadas ("Ver solución").
 - **tarjetas.json**: `id` estable (minúsculas-con-guiones) y único en el tema. **No cambies ids
   existentes**: el historial de repaso del móvil va ligado a `asignatura/tema/id`.
@@ -85,11 +87,13 @@ npm test               # tests
 npm run dev            # app en local (http://localhost:5173/STUDY-APP/)
 npm run build          # validate + índice + build de la app en dist/
 npm run plan           # regenera plan/plan.json y plan/plan.md desde los meta.json
+npm run check-code     # compila y ejecuta los programas C++ de explicaciones y soluciones
 npm run nueva-asignatura -- --slug x --nombre "X" --semestre 2026-27-S2 --examen 2027-06-01
 npm run nuevo-semestre -- --semestre 2026-27-S1   # archiva las asignaturas de ese semestre
 ```
 
-**Siempre** ejecuta `npm run validate` (y `npm test` si tocas código) antes de hacer commit.
+**Siempre** ejecuta `npm run validate` (y `npm run check-code` si tocas material de programación,
+`npm test` si tocas código) antes de hacer commit.
 
 ## Decisiones
 

@@ -45,7 +45,9 @@ Salida, en `asignaturas/<slug>/temas/<nn-slug>/`:
    ---
    # Números complejos
    ```
-   Usa `##` para los apartados (el plan de estudio los usa para trocear la lectura).
+   Usa `##` para los apartados: el plan de estudio los usa para trocear la lectura ("lee de
+   «La idea» a «Determinantes»"), así que pon **títulos cortos y descriptivos** (3–6 palabras) y
+   evita fórmulas en ellos. El primer `# Título` no se muestra en la app (ya sale en la cabecera).
 
 5. **Escribe `ejercicios.md`.** Formato **exacto** (lo parsea la app y el validador):
    ```markdown
@@ -80,9 +82,14 @@ Salida, en `asignaturas/<slug>/temas/<nn-slug>/`:
    - Nada de soluciones ni pistas que la revelen en este fichero. Como mucho una
      *Pista:* corta en cursiva en los tipo examen.
    - No uses `##` dentro de un ejercicio (cerraría la sección). Para apartados usa listas `a)`, `b)`.
-   - **Programación**: enunciados de programas concretos (entrada/salida de ejemplo en un bloque
-     ```` ```text ````), del tamaño de lo que se pide en prácticas/examen. Usa el lenguaje de la
-     asignatura (`lenguaje` en meta.json).
+   - **Programación**: enunciados de programas concretos, del tamaño de lo que se pide en
+     prácticas/examen, en el lenguaje de la asignatura (`lenguaje` en meta.json). Da un ejemplo de
+     entrada y salida con **dos bloques `text`** cuya primera línea es `// entrada` y
+     `// salida esperada` (ver paso 6). Mezcla tipos: "¿qué imprime?", "encuentra el error",
+     "escribe el programa", "traza". Los fragmentos con errores a propósito van en `ejercicios.md`
+     (el comprobador de código no lo compila).
+   - Los mensajes que imprimen los programas, **sin tildes ni ñ** (las consolas de Windows los
+     muestran mal); el resto del texto, con tildes normales.
 
 6. **Escribe `soluciones.md`**, en fichero aparte:
    ```markdown
@@ -98,10 +105,28 @@ Salida, en `asignaturas/<slug>/temas/<nn-slug>/`:
    - Una `### Solución N` por cada `### Ejercicio N`, **mismo número**.
    - **Paso a paso completo**: qué se hace, por qué, y el cálculo intermedio. Termina con el
      resultado en negrita. Si hay una comprobación rápida (sustituir, derivar…), inclúyela.
-   - En ejercicios de programación: solución completa que **compile**, comentada, y luego
-     "Por qué funciona" + "Errores típicos" en 2–4 viñetas. Compílala de verdad si puedes:
-     `g++ -std=c++17 -Wall -Wextra -o /tmp/sol sol.cpp && echo 'entrada' | /tmp/sol`.
-   - **Comprueba cada resultado** (rehaz el cálculo, o con `python3 -c` si es numérico).
+   - En ejercicios de programación: programa **completo** (con `#include` y `int main`), comentado,
+     seguido de los bloques de prueba y luego "Por qué funciona" / "Errores típicos" en 2–4 viñetas:
+     ````markdown
+     ```cpp
+     #include <iostream>
+     ...
+     ```
+     ```text
+     // entrada
+     3725
+     ```
+     ```text
+     // salida esperada
+     1 h 2 min 5 s
+     ```
+     ````
+     **`npm run check-code`** compila con `-Wall -Wextra -Werror` cada programa completo de
+     `explicacion.md` y `soluciones.md`, lo ejecuta con la `// entrada` y compara con la
+     `// salida esperada`. Tiene que salir ✅ (los fragmentos sin `#include` se ignoran).
+     Usa `(int)v.size()` o `size_t` en comparaciones para que `-Werror` no se queje.
+   - **Comprueba cada resultado** de matemáticas: rehaz el cálculo y, si es numérico, verifícalo
+     con `python3 -c "..."` (hay `numpy` para matrices y determinantes).
 
 7. **Escribe `tarjetas.json`:**
    ```json
@@ -126,11 +151,14 @@ Salida, en `asignaturas/<slug>/temas/<nn-slug>/`:
    - En JSON la barra invertida se escapa: `\\frac`, `\\sqrt`. Saltos de línea: `\n`.
 
 8. **Actualiza `meta.json`** del tema: `"estado": "generado"`, `"fuente"` igual que arriba y
-   `"horas"` estimadas para estudiarlo desde cero (4–10).
+   `"horas"` estimadas para estudiarlo desde cero (4–10; temas de matemáticas largos, 8–10;
+   temas cortos de programación, 4–6). El plan reparte el tiempo con estas horas.
+   Cuando lo revises con el profesor o tus apuntes, cambia el estado a `"revisado"`.
 
 9. **Valida y corrige** hasta 0 errores:
    ```bash
    npm run validate
+   npm run check-code   # solo asignaturas de programación
    ```
    El validador comprueba schemas, que cada ejercicio tenga su solución (y al revés) y que todo el
    LaTeX compile. Si cambiaste temas, regenera el plan (`npm run plan`, skill **plan-de-examenes**).

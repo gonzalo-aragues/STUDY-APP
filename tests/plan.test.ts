@@ -114,7 +114,7 @@ describe('generatePlan', () => {
     const d = (f: string) => allDays.find((x) => x.fecha === f)!;
     expect(d('2026-12-22').items.some((i) => i.tipo === 'examen' && i.asignatura === 'prog1')).toBe(true);
     expect(d('2026-12-21').items.some((i) => i.asignatura === 'prog1' && /Repaso final/.test(i.texto))).toBe(true);
-    expect(allDays.filter((x) => x.fecha >= '2026-12-19' && x.fecha <= '2026-12-20').flatMap((x) => x.items).some((i) => i.tipo === 'simulacro' && i.asignatura === 'prog1')).toBe(true);
+    expect(allDays.filter((x) => x.fecha === '2026-12-19').flatMap((x) => x.items).some((i) => i.tipo === 'simulacro' && i.asignatura === 'prog1')).toBe(true);
   });
   it('covers every tema of every subject before its exam', () => {
     for (const s of SUBJECTS.filter((x) => x.temas.length)) {

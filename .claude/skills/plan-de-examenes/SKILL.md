@@ -18,10 +18,16 @@ explicármelo**.
   asignatura con más horas "debidas". Así, con exámenes solapados, manda el más cercano pero los
   siguientes no se quedan a cero.
 - Dentro de cada asignatura, sus bloques se rellenan **en orden de temas**: leer la explicación
-  (troceada por sus apartados `##`), ejercicios básicos, medios y tipo examen (con números).
-  Si sobra tiempo → repasos rotatorios; si falta → avisa "vas justo".
-- 2–3 días antes del examen: **simulacro**. El día antes: **repaso final**. El día del examen: solo
-  examen (y 1,5 h para el siguiente si está a ≤ 4 días; si no, descanso).
+  (troceada por sus apartados `##`: "lee la explicación (2/3), de «Operaciones» a «Matriz
+  inversa»"), ejercicios básicos, medios y tipo examen (con sus números). El ritmo se estira hasta
+  ×1,5 si sobra tiempo; lo que sigue sobrando se convierte en **repasos rotatorios** (rehacer tipo
+  examen → chuleta + ejercicios medios → tarjetas y errores típicos). Si falta tiempo, avisa
+  "vas justo" en `plan.notas`.
+- No empieza una unidad nueva en los últimos minutos de un bloque, y agrupa en cada día los bloques
+  de la misma asignatura.
+- 3 días antes del examen: **simulacro**; 2 días antes: **corregirlo** y repasar lo flojo; el día
+  antes: **repaso final**. El día del examen: solo examen (y 1,5 h para el siguiente examen si está a
+  ≤ 4 días; si no, descanso).
 - Asignaturas sin temas en `meta.json` (p. ej. IC/FAE al principio): bloques de "organiza tus
   apuntes y genera el material" y luego "estudia con tus apuntes".
 - Cada día empieza con 10–15 min de tarjetas de la app.
@@ -35,7 +41,16 @@ explicármelo**.
    - Los temas tienen `horas` estimadas (si no, el script usa `4 + dificultad`).
    - `plan/config.json`: horas por día, horas intensivas, días especiales (festivos, viajes,
      días de prácticas…). Si te digo "el sábado no puedo" o "esta semana solo 2 h", ponlo aquí como
-     `"AAAA-MM-DD": horas`.
+     `"AAAA-MM-DD": horas`:
+     ```json
+     {
+       "horasPorDia": 3, "horasIntensivas": 5, "diasIntensivos": 10,
+       "horasDiaExamen": 1.5, "diasExamenCercano": 4,
+       "diasEspeciales": { "2026-12-25": 1, "2027-01-01": 1, "2026-11-21": 0 },
+       "notas": ["El 21 de noviembre tengo boda: día libre"]
+     }
+     ```
+     `notas` aparece arriba del plan y en la app.
 
 2. **Ejecuta el plan desde hoy** (o desde la fecha que diga):
    ```bash
@@ -57,7 +72,14 @@ explicármelo**.
 5. **Explícamelo en ≤ 10 líneas:** horas totales por asignatura, qué semanas son críticas, qué
    hago **hoy** y **mañana**, y el aviso de que si me retraso basta con volver a ejecutar la skill.
 
-## Ejemplo
+## Ejemplo real (5 nov 2026, cinco asignaturas)
+
+`npm run plan -- --desde 2026-11-05` → 11 semanas, 246,5 h. Semanas 1–6 reparten entre las cinco
+(PROG1 algo más porque examina antes; IC y FAE empiezan con "organiza tus apuntes"); semana 7
+(14–20 dic) es casi toda PROG1 a 5 h/día; Navidad con días reducidos; del 30 dic al 16 ene manda
+el examen más cercano pero Cálculo, FAE e IC siguen recibiendo bloques.
+
+## Ejemplo de conversación
 
 > **Yo:** me he retrasado una semana con álgebra, rehaz el plan
 >

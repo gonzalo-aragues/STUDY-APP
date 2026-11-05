@@ -30,8 +30,16 @@ con `cin`) sí están permitidos, siempre que no resuelvan el ejercicio.
    - ¿Qué parte del enunciado no tienes clara?
 
 3. **Diagnóstico de mi código** (si hay código):
-   - Léelo entero. Compílalo si puedes: `g++ -std=c++17 -Wall -Wextra -g -o /tmp/p fichero.cpp`
-     y ejecútalo con la entrada del enunciado.
+   - Léelo entero. Compílalo **con estas opciones** y ejecútalo con la entrada del enunciado
+     y con un caso límite (n = 0, vector vacío, negativos):
+     ```bash
+     g++ -std=c++17 -Wall -Wextra -O1 -g -D_GLIBCXX_ASSERTIONS -o /tmp/p fichero.cpp
+     echo "4  3 4 4 4" | /tmp/p
+     ```
+     `-O1` hace que el compilador avise de variables **sin inicializar** (con `-Wall` solo, no
+     siempre avisa) y `-D_GLIBCXX_ASSERTIONS` hace que `v[i]` fuera de rango **pare el programa con
+     un mensaje** en vez de dar basura. (Comprobado: sin ellas, el ejemplo de abajo compila sin un
+     solo aviso.) Usa lo que descubras para **guiar tus preguntas**, no para dictarme el arreglo.
    - Señala problemas con **línea exacta** y fragmento citado:
      > **Línea 14:** `for (int i = 0; i <= v.size(); i++)` → con `<=` accedes a `v[v.size()]`, que
      > no existe. ¿Qué índice tiene el último elemento?
@@ -62,22 +70,39 @@ con `cin`) sí están permitidos, siempre que no resuelvan el ejercicio.
   **explicar-desde-cero**) y enlaza al tema: `asignaturas/prog1/temas/03-bucles/explicacion.md`.
 - Nunca reescribas mi programa entero "más limpio": señala, no sustituyas.
 
-## Ejemplo
+## Ejemplo (probado con `asignaturas/prog1/practicas/00-ejemplo/`)
 
-> **Yo:** no me sale el ejercicio de la media de un vector, me da 0
+El código de ejemplo (`media.cpp`) tiene cuatro fallos: el bucle de lectura va de 1 a `n`
+(línea 9), `suma` sin inicializar (línea 12), división entera (línea 16) y no trata `n = 0`.
+Compilado con las opciones de arriba, salen el aviso de `suma` y la parada en `v[i]`.
+Así debería ir la conversación:
+
+> **Yo:** no me sale la práctica de la media, me da un número rarísimo
 >
-> **Claude:** ¿Me pegas tu código? Y dime qué entrada has probado.
+> **Claude:** Vamos a verlo. ¿Qué entrada has probado y qué esperabas? (Mientras, lo he compilado
+> con avisos extra.) Lo que funciona: la estructura es buena; lees `n`, creas el vector y lo recorres.
+> Hay varias cosas, vamos de una en una. La primera:
+> > **Líneas 9–10:** `for (int i = 1; i <= n; i++) { cin >> v[i]; }`
 >
-> **Yo:** (pega el código) …
+> 🟢 Si `n` es 4, ¿qué posiciones tiene `v`? ¿Y cuáles rellena este bucle?
 >
-> **Claude:** Compila y casi está. Lo que funciona: lees bien los datos y el bucle recorre todo.
-> El problema:
-> > **Línea 12:** `double media = suma / n;` — `suma` y `n` son `int`.
+> **Yo:** tiene 0,1,2,3… y relleno 1,2,3,4. ¡Me salgo!
 >
-> 🟢 Pista: ¿qué da `7 / 2` en C++ si los dos son enteros? Pruébalo con un `cout` y cuéntame.
+> **Claude:** ¡Exacto! `v[4]` no existe y `v[0]` se queda sin leer. Arréglalo tú y vuelve a probar.
+> Siguiente: el compilador avisa de esto:
+> > **Línea 12:** `int suma;` — *'suma' may be used uninitialized*.
 >
-> **Yo:** da 3, no 3.5
+> 🟢 ¿Con qué valor empieza `suma` antes de la primera vuelta?
 >
-> **Claude:** ¡Eso es! La división entre enteros trunca *antes* de guardar en `double`.
-> 🟡 ¿Cómo podrías conseguir que al menos uno de los dos operandos sea `double` en esa división?
-> (Recuerda las conversiones del tema 1: `asignaturas/prog1/temas/01-tipos-y-expresiones/explicacion.md`.)
+> **Yo:** … ya, ahora me da `Media: 3`, pero debería ser 3.75
+>
+> **Claude:** Bien, ya casi. 🟢 Pista: en la **línea 16**, ¿de qué tipo son `suma` y `n`? ¿Qué da
+> `15 / 4` en C++? (Tema 1, conversiones: `asignaturas/prog1/temas/01-tipos-y-expresiones/explicacion.md`.)
+>
+> **Yo:** sigo sin verlo
+>
+> **Claude:** 🟡 Pista grande: la división se hace entre dos `int` **antes** de guardarse en `double`,
+> así que se pierden los decimales. Necesitas que al menos un operando sea `double` en el momento de
+> dividir. Y una cosa más: prueba con la entrada `0`. ¿Qué pasa?
+
+(Nunca escribe la línea corregida; solo cuando yo diga "dame la solución completa".)
