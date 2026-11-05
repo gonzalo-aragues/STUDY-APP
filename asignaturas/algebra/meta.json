@@ -18,12 +18,16 @@
     {
       "slug": "01-matrices-y-sistemas-lineales",
       "titulo": "Matrices y sistemas lineales",
-      "estado": "pendiente"
+      "estado": "generado",
+      "fuente": "genérico - revisar con apuntes",
+      "horas": 10
     },
     {
       "slug": "02-estructuras-algebraicas",
       "titulo": "Estructuras algebraicas",
-      "estado": "pendiente"
+      "estado": "generado",
+      "fuente": "genérico - revisar con apuntes",
+      "horas": 10
     }
   ]
 }

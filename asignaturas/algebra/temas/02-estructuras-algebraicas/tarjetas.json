@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../../schemas/tarjetas.schema.json",
+  "asignatura": "algebra",
+  "tema": "02-estructuras-algebraicas",
+  "fuente": "genérico - revisar con apuntes",
+  "tarjetas": [
+    { "id": "def-operacion-interna", "tipo": "concepto", "anverso": "¿Qué es una operación interna en un conjunto $G$?", "reverso": "Una regla $*:G\\times G\\to G$: a dos elementos de $G$ les asigna otro elemento **de $G$** (el conjunto es cerrado)." },
+    { "id": "ej-no-interna", "tipo": "concepto", "anverso": "Pon un ejemplo de operación que **no** es interna.", "reverso": "La resta en $\\N$: $2-5=-3\\notin\\N$. O la división en $\\Z$: $1\\div2\\notin\\Z$." },
+    { "id": "def-asociativa", "tipo": "concepto", "anverso": "¿Qué significa que $*$ es asociativa?", "reverso": "$(a*b)*c=a*(b*c)$ para todo $a,b,c$: da igual dónde pongas los paréntesis." },
+    { "id": "def-neutro", "tipo": "concepto", "anverso": "¿Qué es el elemento neutro de $*$?", "reverso": "Un $e$ con $e*a=a*e=a$ para todo $a$. Para $+$ es 0, para $\\cdot$ es 1… pero **calcúlalo** en cada operación." },
+    { "id": "def-simetrico", "tipo": "concepto", "anverso": "¿Qué es el simétrico de $a$?", "reverso": "Un $a'$ con $a*a'=a'*a=e$. Con $+$ se llama opuesto ($-a$); con $\\cdot$, inverso ($\\frac1a$)." },
+    { "id": "def-grupo", "tipo": "concepto", "anverso": "Definición de grupo.", "reverso": "Conjunto con operación interna **asociativa**, con **neutro** y en la que **todo elemento tiene simétrico**." },
+    { "id": "def-abeliano", "tipo": "concepto", "anverso": "¿Qué es un grupo abeliano? Da un grupo que no lo sea.", "reverso": "Un grupo con operación conmutativa. No abeliano: matrices $2\\times2$ invertibles con el producto." },
+    { "id": "ej-n-no-grupo", "tipo": "concepto", "anverso": "¿Por qué $(\\N,+)$ no es un grupo?", "reverso": "Porque los elementos (salvo el 0) no tienen opuesto en $\\N$: $-3\\notin\\N$." },
+    { "id": "proc-comprobar-grupo", "tipo": "procedimiento", "anverso": "Pasos para comprobar si $(G,*)$ es un grupo.", "reverso": "1. Interna.\n2. Asociativa (en general).\n3. Neutro: resuelve $a*e=a$ y comprueba $e*a=a$.\n4. Simétrico: resuelve $a*a'=e$ y mira que $a'\\in G$.\n5. (Abeliano: conmutativa.)" },
+    { "id": "def-zn", "tipo": "concepto", "anverso": "¿Qué es $\\Z_n$ y cómo se opera?", "reverso": "$\\{0,1,\\dots,n-1\\}$; se suma o multiplica normal y se toma el resto al dividir entre $n$ (como `%` en C++)." },
+    { "id": "prop-inverso-zn", "tipo": "concepto", "anverso": "¿Cuándo tiene $a$ inverso multiplicativo en $\\Z_n$?", "reverso": "Si y solo si $\\operatorname{mcd}(a,n)=1$." },
+    { "id": "proc-inverso-zn", "tipo": "procedimiento", "anverso": "¿Cómo encuentras el inverso de 3 en $\\Z_7$?", "reverso": "Busca $x$ con $3x\\bmod7=1$ probando $x=1,2,\\dots$: $3\\cdot5=15\\to1$. El inverso es 5." },
+    { "id": "def-anillo", "tipo": "concepto", "anverso": "Definición de anillo $(A,+,\\cdot)$.", "reverso": "$(A,+)$ grupo abeliano, $\\cdot$ asociativo y distributiva: $a(b+c)=ab+ac$, $(a+b)c=ac+bc$." },
+    { "id": "def-divisor-cero", "tipo": "concepto", "anverso": "¿Qué es un divisor de cero? Ejemplo.", "reverso": "Un $a\\neq0$ tal que $ab=0$ para algún $b\\neq0$. En $\\Z_6$: $2\\cdot3=0$." },
+    { "id": "def-cuerpo", "tipo": "concepto", "anverso": "Definición de cuerpo.", "reverso": "Anillo conmutativo con unidad ($1\\neq0$) en el que **todo elemento no nulo tiene inverso**. Ej.: $\\Q,\\R,\\C$." },
+    { "id": "prop-zp-cuerpo", "tipo": "concepto", "anverso": "¿Cuándo es $\\Z_n$ un cuerpo?", "reverso": "Si y solo si $n$ es **primo**. $\\Z_5$ sí; $\\Z_6$ no ($2\\cdot3=0$)." },
+    { "id": "prop-z-no-cuerpo", "tipo": "concepto", "anverso": "¿Es $\\Z$ un cuerpo? ¿Y un anillo?", "reverso": "Anillo conmutativo con unidad, sí. Cuerpo, no: el 2 no tiene inverso en $\\Z$." },
+    { "id": "prop-simetrico-producto", "tipo": "concepto", "anverso": "En un grupo, ¿cuál es el simétrico de $a*b$?", "reverso": "$(a*b)'=b'*a'$ (orden al revés: calcetín y zapato)." },
+    { "id": "prop-contraejemplo", "tipo": "concepto", "anverso": "¿Qué necesitas para probar que una propiedad **no** se cumple? ¿Y que **sí**?", "reverso": "No: basta **un** contraejemplo concreto.\nSí: un razonamiento para **todos** los elementos." }
+  ]
+}

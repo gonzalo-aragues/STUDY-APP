@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schemas/tarjetas.schema.json",
+  "asignatura": "algebra",
+  "tema": "01-matrices-y-sistemas-lineales",
+  "fuente": "genérico - revisar con apuntes",
+  "tarjetas": [
+    { "id": "def-matriz", "tipo": "concepto", "anverso": "¿Qué es una matriz $m\\times n$ y qué indica $a_{ij}$?", "reverso": "Una tabla de $m$ filas y $n$ columnas. $a_{ij}$ es el elemento de la fila $i$ y la columna $j$." },
+    { "id": "def-traspuesta", "tipo": "concepto", "anverso": "¿Qué es la traspuesta $A^t$? ¿Y una matriz simétrica?", "reverso": "$A^t$ cambia filas por columnas: $(A^t)_{ij}=a_{ji}$. Simétrica: $A^t=A$." },
+    { "id": "prop-tamano-producto", "tipo": "concepto", "anverso": "¿Cuándo existe $AB$ y de qué tamaño es?", "reverso": "Si columnas de $A$ = filas de $B$: $(m\\times n)(n\\times p)=m\\times p$." },
+    { "id": "proc-producto", "tipo": "procedimiento", "anverso": "¿Cómo se calcula el elemento $(i,j)$ de $AB$?", "reverso": "Fila $i$ de $A$ \"por\" columna $j$ de $B$: $\\sum_k a_{ik}b_{kj}$ (multiplica uno a uno y suma)." },
+    { "id": "prop-no-conmutativo", "tipo": "concepto", "anverso": "¿Es cierto que $AB=BA$ siempre?", "reverso": "No. El producto de matrices no es conmutativo (a veces uno de los dos ni existe)." },
+    { "id": "proc-det-2x2-3x3", "tipo": "procedimiento", "anverso": "Determinante $2\\times2$ y regla de Sarrus.", "reverso": "$\\begin{vmatrix}a&b\\\\c&d\\end{vmatrix}=ad-bc$.\nSarrus: $aei+bfg+cdh-ceg-bdi-afh$." },
+    { "id": "prop-det-operaciones", "tipo": "concepto", "anverso": "¿Cómo afectan las operaciones de fila al determinante?", "reverso": "Intercambiar filas: cambia el signo. Fila por $k$: se multiplica por $k$. Sumar a una fila un múltiplo de otra: **no cambia**." },
+    { "id": "prop-det-producto", "tipo": "concepto", "anverso": "$\\det(AB)$, $\\det(A^t)$, $\\det(kA)$ con $A$ de tamaño $n$.", "reverso": "$\\det(AB)=\\det A\\det B$; $\\det A^t=\\det A$; $\\det(kA)=k^n\\det A$." },
+    { "id": "def-inversa", "tipo": "concepto", "anverso": "¿Qué es $A^{-1}$ y cuándo existe?", "reverso": "La matriz con $AA^{-1}=A^{-1}A=I$. Existe si y solo si $\\det A\\neq0$." },
+    { "id": "proc-inversa-2x2", "tipo": "procedimiento", "anverso": "Inversa de $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$.", "reverso": "$\\dfrac{1}{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}$: intercambia la diagonal, cambia el signo de la otra." },
+    { "id": "proc-gauss-jordan", "tipo": "procedimiento", "anverso": "¿Cómo calculas $A^{-1}$ por Gauss-Jordan?", "reverso": "1. Escribe $(A\\mid I)$.\n2. Operaciones de fila hasta tener $I$ a la izquierda.\n3. Lo de la derecha es $A^{-1}$." },
+    { "id": "def-rango", "tipo": "concepto", "anverso": "¿Qué es el rango de una matriz y cómo se calcula rápido?", "reverso": "El número de filas linealmente independientes. Escalona por Gauss y cuenta las filas no nulas." },
+    { "id": "proc-gauss-sistema", "tipo": "procedimiento", "anverso": "Pasos del método de Gauss para un sistema.", "reverso": "1. Matriz ampliada $(A|B)$.\n2. Ceros debajo de cada pivote (forma escalonada).\n3. Resuelve de abajo arriba." },
+    { "id": "prop-rouche", "tipo": "concepto", "anverso": "Teorema de Rouché-Frobenius ($n$ incógnitas).", "reverso": "$\\operatorname{rg}A\\neq\\operatorname{rg}(A|B)$: incompatible.\nIguales $=n$: compatible determinado.\nIguales $<n$: compatible indeterminado ($n-\\operatorname{rg}$ parámetros)." },
+    { "id": "proc-discutir-parametro", "tipo": "procedimiento", "anverso": "¿Cómo discutes un sistema cuadrado con un parámetro $a$?", "reverso": "1. Calcula $|A|$ en función de $a$.\n2. Si $|A|\\neq0$: SCD.\n3. Para cada $a$ que anula $|A|$, sustituye y compara $\\operatorname{rg}A$ y $\\operatorname{rg}(A|B)$." },
+    { "id": "prop-cramer", "tipo": "concepto", "anverso": "Regla de Cramer.", "reverso": "Si $A$ es cuadrada con $\\det A\\neq0$: $x_i=\\dfrac{\\det A_i}{\\det A}$, con $A_i$ = $A$ con la columna $i$ cambiada por $B$." },
+    { "id": "proc-ecuacion-matricial", "tipo": "procedimiento", "anverso": "¿Cómo despejas $X$ en $AX=B$? ¿Y en $XA=B$?", "reverso": "$AX=B\\Rightarrow X=A^{-1}B$ (inversa por la **izquierda**).\n$XA=B\\Rightarrow X=BA^{-1}$ (por la **derecha**)." },
+    { "id": "error-det-cero-sci", "tipo": "concepto", "anverso": "Si $\\det A=0$ en un sistema cuadrado, ¿es seguro compatible indeterminado?", "reverso": "No: puede ser **incompatible**. Hay que comparar $\\operatorname{rg}A$ con $\\operatorname{rg}(A|B)$." }
+  ]
+}
