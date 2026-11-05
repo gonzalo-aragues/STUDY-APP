@@ -34,3 +34,44 @@ Formato: **decisión** — motivo.
   HTML ya hecho: carga más rápida, menos JS, funciona igual offline. Solo se envían el CSS y las
   fuentes de KaTeX.
 - **KaTeX con salida solo HTML** (sin MathML) para que el contenido pese la mitad.
+
+## App
+
+- **Vite + TypeScript sin framework** (DOM a mano con un helper `h()` de 30 líneas). La app es
+  pequeña, carga rápido y no hay dependencias que actualizar cada semestre.
+- **FSRS (librería `ts-fsrs`) en vez de SM-2.** Es el algoritmo moderno (el de Anki actual), está
+  bien probado y la librería pesa poco. Lo envuelvo en `app/src/lib/scheduler.ts` (funciones puras,
+  testeadas). Parámetros: retención 90 % (configurable 85/90/95 %), intervalo máximo 365 días,
+  pasos de aprendizaje 1 min y 10 min, reaprendizaje 10 min, *fuzz* activado.
+  Instalé `ts-fsrs@5` (la 6.x pedía una versión de Node más nueva).
+- **Extra propio: tope antes del examen.** Si una tarjeta tocaría después de su examen, se adelanta
+  a las 06:00 del día anterior (salvo que falten menos de 12 h, para no entrar en bucle).
+- **Límite de tarjetas nuevas: 15/día** (configurable en Ajustes, y botón "+10 nuevas hoy"). Con
+  5 asignaturas a la vez y vas atrasado, mejor pocas nuevas bien repasadas.
+- **Las tarjetas falladas vuelven en la misma sesión** (tras ~3 tarjetas) mientras estén en pasos de
+  aprendizaje. Hay **Deshacer** (tecla Z) por si pulsas el botón equivocado.
+- **Sesión de 5 minutos**: cuenta atrás; al acabar el tiempo termina en cuanto respondes la tarjeta
+  actual, con resumen y botón "Otros 5 minutos".
+- **Progreso en IndexedDB** (`idb`): tarjetas, historial de repasos, pasos de tareas marcados,
+  ejercicios hechos, ítems del plan marcados y ajustes. **Importar reemplaza todo** (con
+  confirmación): es lo más predecible si solo usas un dispositivo.
+- **El tema claro/oscuro se guarda en `localStorage`** (para aplicarlo antes de pintar y evitar un
+  parpadeo); el resto de ajustes, en IndexedDB y por tanto en la copia de seguridad.
+- **Rutas con `#/...`** (hash routing): funciona en GitHub Pages sin configurar redirecciones 404.
+- **Contenido troceado**: `content/index.json` (ligero) + `content/tarjetas/<asig>.json` +
+  `content/temas/<asig>/<tema>.json`, todo precacheado por el service worker (funciona offline).
+- **Pantalla extra "Plan"** (desde Hoy → "Ver la semana entera") y **Ajustes** (icono de engranaje):
+  no estaban en la lista pero hacían falta para ver el plan completo y para exportar/importar.
+- **Ejercicios marcables como hechos** y los ítems del plan de hoy también (se guardan en el móvil).
+- **Aviso de copia de seguridad** en Hoy si tienes ≥ 20 repasos y la última copia tiene > 14 días.
+- **`?hoy=AAAA-MM-DD` en la URL** finge la fecha (lo uso para las capturas; puede servirte para
+  ver cómo será un día concreto del plan).
+
+## Despliegue
+
+- **Workflow `deploy.yml`**: en cada push a `main` → `npm ci` → typecheck → tests → `npm run build`
+  (que valida el contenido y genera el índice) → GitHub Pages. Si el contenido tiene errores
+  (p. ej. un ejercicio sin solución o LaTeX roto) **no se despliega** y la versión anterior sigue online.
+- **`VITE_BASE` sale del nombre del repo** (`/${{ github.event.repository.name }}/`), así funciona
+  aunque renombres el repo. En local el valor por defecto es `/STUDY-APP/`.
+- **Workflow `ci.yml`**: lo mismo sin desplegar, para PRs y otras ramas.
