@@ -4,3 +4,4 @@ app/public/content/
 screenshots/tmp/
 *.log
 .DS_Store
+screenshots/

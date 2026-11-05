@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/meta.schema.json",
+  "slug": "ic",
+  "nombre": "Introducción a los Computadores",
+  "abreviatura": "IC",
+  "curso": 1,
+  "semestre": "2026-27-S1",
+  "estado": "activa",
+  "color": "#b5523b",
+  "dificultad": 3,
+  "examenes": [
+    {
+      "fecha": "2027-01-16",
+      "tipo": "final"
+    }
+  ],
+  "temas": []
+}

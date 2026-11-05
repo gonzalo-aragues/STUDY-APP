@@ -1,0 +1,45 @@
+{
+  "$schema": "../../schemas/meta.schema.json",
+  "slug": "prog1",
+  "nombre": "Programación 1",
+  "abreviatura": "PROG1",
+  "curso": 1,
+  "semestre": "2026-27-S1",
+  "estado": "activa",
+  "color": "#3b6fb6",
+  "dificultad": 4,
+  "lenguaje": "cpp",
+  "examenes": [
+    {
+      "fecha": "2026-12-22",
+      "tipo": "final"
+    }
+  ],
+  "temas": [
+    {
+      "slug": "01-tipos-y-expresiones",
+      "titulo": "Tipos y expresiones",
+      "estado": "pendiente"
+    },
+    {
+      "slug": "02-condicionales",
+      "titulo": "Condicionales",
+      "estado": "pendiente"
+    },
+    {
+      "slug": "03-bucles",
+      "titulo": "Bucles",
+      "estado": "pendiente"
+    },
+    {
+      "slug": "04-funciones",
+      "titulo": "Funciones",
+      "estado": "pendiente"
+    },
+    {
+      "slug": "05-vectores",
+      "titulo": "Vectores",
+      "estado": "pendiente"
+    }
+  ]
+}

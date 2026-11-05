@@ -1,0 +1,29 @@
+{
+  "$schema": "../../schemas/meta.schema.json",
+  "slug": "algebra",
+  "nombre": "Álgebra",
+  "abreviatura": "Álgebra",
+  "curso": 1,
+  "semestre": "2026-27-S1",
+  "estado": "activa",
+  "color": "#7a5bb5",
+  "dificultad": 4,
+  "examenes": [
+    {
+      "fecha": "2027-01-09",
+      "tipo": "final"
+    }
+  ],
+  "temas": [
+    {
+      "slug": "01-matrices-y-sistemas-lineales",
+      "titulo": "Matrices y sistemas lineales",
+      "estado": "pendiente"
+    },
+    {
+      "slug": "02-estructuras-algebraicas",
+      "titulo": "Estructuras algebraicas",
+      "estado": "pendiente"
+    }
+  ]
+}
