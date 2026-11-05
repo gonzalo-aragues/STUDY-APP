@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schemas/tarjetas.schema.json",
+  "asignatura": "calculo",
+  "tema": "01-numeros-complejos",
+  "fuente": "genérico - revisar con apuntes",
+  "tarjetas": [
+    { "id": "def-i", "tipo": "concepto", "anverso": "¿Qué es la unidad imaginaria $i$?", "reverso": "El número que cumple $i^2=-1$. Con él, $x^2+1=0$ tiene solución: $x=\\pm i$." },
+    { "id": "def-binomica", "tipo": "concepto", "anverso": "En $z=a+bi$, ¿qué son $\\operatorname{Re}(z)$ e $\\operatorname{Im}(z)$?", "reverso": "$\\operatorname{Re}(z)=a$ y $\\operatorname{Im}(z)=b$. Las dos son **números reales**: $\\operatorname{Im}(3-4i)=-4$, no $-4i$." },
+    { "id": "def-conjugado", "tipo": "concepto", "anverso": "¿Qué es el conjugado de $z=a+bi$ y qué da $z\\cdot\\overline z$?", "reverso": "$\\overline z=a-bi$ (reflejo en el eje real). $z\\overline z=a^2+b^2=|z|^2$, siempre real y $\\ge0$." },
+    { "id": "def-modulo", "tipo": "concepto", "anverso": "¿Qué es el módulo de $z=a+bi$?", "reverso": "La distancia de $z$ al origen: $|z|=\\sqrt{a^2+b^2}$." },
+    { "id": "def-argumento", "tipo": "concepto", "anverso": "¿Qué es el argumento de un complejo?", "reverso": "El ángulo $\\theta$ que forma el punto $(a,b)$ con el semieje real positivo: $\\cos\\theta=\\frac ar$, $\\sin\\theta=\\frac br$. El principal suele estar en $(-\\pi,\\pi]$." },
+    { "id": "def-polar", "tipo": "concepto", "anverso": "Escribe $z$ en forma trigonométrica, polar y exponencial.", "reverso": "$z=r(\\cos\\theta+i\\sin\\theta)=r_\\theta=re^{i\\theta}$, con $r=|z|$ y $\\theta=\\arg z$." },
+    { "id": "prop-potencias-i", "tipo": "procedimiento", "anverso": "¿Cómo calculas $i^n$ para $n$ grande?", "reverso": "1. Divide $n$ entre 4.\n2. Quédate con el resto $r$.\n3. $i^n=i^r$: $i^0=1$, $i^1=i$, $i^2=-1$, $i^3=-i$." },
+    { "id": "proc-dividir", "tipo": "procedimiento", "anverso": "¿Cómo se divide $\\dfrac{a+bi}{c+di}$ en binómica?", "reverso": "1. Multiplica arriba y abajo por el conjugado $c-di$.\n2. Abajo queda $c^2+d^2$ (real).\n3. Opera arriba y separa parte real e imaginaria." },
+    { "id": "proc-argumento", "tipo": "procedimiento", "anverso": "¿Cómo calculas bien el argumento de $a+bi$?", "reverso": "1. **Dibuja** el punto y mira el cuadrante.\n2. $\\alpha=\\arctan|b/a|$.\n3. 1.º: $\\alpha$; 2.º: $\\pi-\\alpha$; 3.º: $-(\\pi-\\alpha)$; 4.º: $-\\alpha$." },
+    { "id": "prop-producto-polar", "tipo": "concepto", "anverso": "¿Qué pasa con módulos y argumentos al multiplicar y dividir en polar?", "reverso": "Producto: módulos se **multiplican**, argumentos se **suman**: $r_\\alpha s_\\beta=(rs)_{\\alpha+\\beta}$.\nCociente: se dividen y se restan." },
+    { "id": "prop-de-moivre", "tipo": "concepto", "anverso": "Enuncia la fórmula de De Moivre.", "reverso": "$(r_\\theta)^n=(r^n)_{n\\theta}$, es decir, $\\big(r(\\cos\\theta+i\\sin\\theta)\\big)^n=r^n(\\cos n\\theta+i\\sin n\\theta)$." },
+    { "id": "proc-raices", "tipo": "procedimiento", "anverso": "¿Cómo calculas las raíces $n$-ésimas de $z=r_\\theta$?", "reverso": "$\\left(\\sqrt[n]{r}\\right)_{\\frac{\\theta+2k\\pi}{n}}$ para $k=0,1,\\dots,n-1$.\nSon $n$ raíces que forman un polígono regular de $n$ lados." },
+    { "id": "prop-euler", "tipo": "concepto", "anverso": "¿Qué dice la fórmula de Euler?", "reverso": "$e^{i\\theta}=\\cos\\theta+i\\sin\\theta$. Por ejemplo, $e^{i\\pi}=-1$." },
+    { "id": "prop-tfa", "tipo": "concepto", "anverso": "¿Qué dice el teorema fundamental del álgebra?", "reverso": "Todo polinomio de grado $n\\ge1$ tiene exactamente $n$ raíces en $\\C$ (contando multiplicidad)." },
+    { "id": "prop-conjugadas", "tipo": "concepto", "anverso": "Si un polinomio con coeficientes **reales** tiene la raíz $2+3i$, ¿qué otra raíz tiene seguro?", "reverso": "Su conjugada $2-3i$: las raíces no reales van por parejas conjugadas." },
+    { "id": "proc-segundo-grado", "tipo": "procedimiento", "anverso": "¿Cómo resuelves $az^2+bz+c=0$ si $\\Delta<0$?", "reverso": "1. $\\Delta=b^2-4ac<0$.\n2. $\\sqrt{\\Delta}=i\\sqrt{|\\Delta|}$.\n3. $z=\\dfrac{-b\\pm i\\sqrt{|\\Delta|}}{2a}$ (dos conjugadas)." },
+    { "id": "error-argumento-cuadrante", "tipo": "concepto", "anverso": "¿Por qué $\\arg(-1-i)\\neq\\arctan\\frac{-1}{-1}=\\frac\\pi4$?", "reverso": "Porque $\\arctan$ solo da ángulos de la mitad derecha. $-1-i$ está en el 3.er cuadrante: $\\arg=-\\frac{3\\pi}{4}$." },
+    { "id": "geo-distancia", "tipo": "concepto", "anverso": "¿Qué significa geométricamente $|z-w|$?", "reverso": "La distancia entre los puntos $z$ y $w$ del plano. Así, $|z-i|=1$ es la circunferencia de centro $i$ y radio 1." }
+  ]
+}

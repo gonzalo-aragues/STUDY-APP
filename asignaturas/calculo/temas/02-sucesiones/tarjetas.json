@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../../schemas/tarjetas.schema.json",
+  "asignatura": "calculo",
+  "tema": "02-sucesiones",
+  "fuente": "genérico - revisar con apuntes",
+  "tarjetas": [
+    { "id": "def-sucesion", "tipo": "concepto", "anverso": "¿Qué es una sucesión?", "reverso": "Una función $a:\\N\\to\\R$, $n\\mapsto a_n$: una lista infinita ordenada $a_1,a_2,a_3,\\dots$" },
+    { "id": "def-limite", "tipo": "concepto", "anverso": "Definición de $\\lim a_n=L$ (con $\\varepsilon$).", "reverso": "$\\forall\\varepsilon>0\\ \\exists N$ tal que $n\\ge N\\Rightarrow|a_n-L|<\\varepsilon$.\nA partir de un término, **todos** están a menos de $\\varepsilon$ de $L$." },
+    { "id": "def-divergente", "tipo": "concepto", "anverso": "¿Qué es una sucesión divergente y una oscilante?", "reverso": "Divergente: tiende a $+\\infty$ o $-\\infty$. Oscilante: ni converge ni diverge, p. ej. $(-1)^n$." },
+    { "id": "prop-convergente-acotada", "tipo": "concepto", "anverso": "¿Convergente implica acotada? ¿Y al revés?", "reverso": "Convergente ⇒ acotada, sí. Al revés no: $(-1)^n$ está acotada y no converge." },
+    { "id": "prop-monotona-acotada", "tipo": "concepto", "anverso": "¿Qué dice el teorema de la convergencia monótona?", "reverso": "Toda sucesión **monótona y acotada** es convergente." },
+    { "id": "proc-monotonia", "tipo": "procedimiento", "anverso": "¿Cómo estudias si $(a_n)$ es creciente?", "reverso": "1. Calcula $a_{n+1}-a_n$ y mira su signo ($>0$ creciente).\n2. O, si $a_n>0$, mira si $\\frac{a_{n+1}}{a_n}>1$.\n3. En recurrentes: inducción." },
+    { "id": "proc-infinito-infinito", "tipo": "procedimiento", "anverso": "¿Cómo resuelves $\\frac{\\infty}{\\infty}$ con polinomios?", "reverso": "Divide arriba y abajo por la mayor potencia de $n$.\nGrado arriba < abajo: 0. Igual: cociente de coeficientes principales. Mayor: $\\pm\\infty$." },
+    { "id": "proc-conjugado", "tipo": "procedimiento", "anverso": "¿Cómo resuelves $\\infty-\\infty$ con raíces, p. ej. $\\sqrt{n^2+3n}-n$?", "reverso": "1. Multiplica y divide por el conjugado $\\sqrt{n^2+3n}+n$.\n2. Arriba queda $(n^2+3n)-n^2=3n$.\n3. Divide por $n$: $\\to\\frac32$." },
+    { "id": "proc-uno-infinito", "tipo": "procedimiento", "anverso": "¿Cómo resuelves $\\lim a_n^{b_n}$ si es $1^\\infty$?", "reverso": "$\\lim a_n^{b_n}=e^{\\lim b_n(a_n-1)}$.\n1. Calcula $a_n-1$ y simplifica.\n2. Multiplica por $b_n$ y halla el límite $\\ell$.\n3. Resultado $e^\\ell$." },
+    { "id": "def-e", "tipo": "concepto", "anverso": "¿Cuánto vale $\\lim\\left(1+\\frac kn\\right)^n$?", "reverso": "$e^k$. En particular $\\lim\\left(1+\\frac1n\\right)^n=e\\approx2{,}718$." },
+    { "id": "prop-ordenes", "tipo": "concepto", "anverso": "Ordena de más lento a más rápido: $n!$, $\\log n$, $2^n$, $n^n$, $n^3$.", "reverso": "$\\log n\\ll n^3\\ll2^n\\ll n!\\ll n^n$." },
+    { "id": "prop-sandwich", "tipo": "concepto", "anverso": "¿Qué dice la regla del sándwich?", "reverso": "Si $b_n\\le a_n\\le c_n$ y $b_n\\to L$, $c_n\\to L$, entonces $a_n\\to L$." },
+    { "id": "prop-acotada-por-cero", "tipo": "concepto", "anverso": "¿Cuánto vale $\\lim\\frac{\\sin n}{n}$ y por qué?", "reverso": "0: $\\sin n$ está acotada y $\\frac1n\\to0$; acotada × (algo que tiende a 0) tiende a 0." },
+    { "id": "prop-stolz", "tipo": "concepto", "anverso": "Enuncia el criterio de Stolz.", "reverso": "Si $b_n$ es creciente y $b_n\\to+\\infty$, y existe $\\lim\\frac{a_{n+1}-a_n}{b_{n+1}-b_n}=L$, entonces $\\lim\\frac{a_n}{b_n}=L$." },
+    { "id": "prop-cociente", "tipo": "concepto", "anverso": "Criterio del cociente para sucesiones de términos positivos.", "reverso": "Si $\\frac{a_{n+1}}{a_n}\\to\\ell<1$, entonces $a_n\\to0$. Si $\\ell>1$, $a_n\\to+\\infty$. Si $\\ell=1$, no decide." },
+    { "id": "proc-recurrente", "tipo": "procedimiento", "anverso": "¿Cómo calculas el límite de una sucesión recurrente $a_{n+1}=f(a_n)$?", "reverso": "1. Prueba que es monótona (inducción).\n2. Prueba que está acotada (inducción).\n3. Converge; llama $L$ al límite.\n4. Resuelve $L=f(L)$ y descarta soluciones imposibles." },
+    { "id": "error-uno-infinito", "tipo": "concepto", "anverso": "¿Por qué $1^\\infty$ no vale 1?", "reverso": "Porque la base no es exactamente 1: se acerca a 1 mientras el exponente crece. $\\left(1+\\frac1n\\right)^n\\to e$, no 1." }
+  ]
+}

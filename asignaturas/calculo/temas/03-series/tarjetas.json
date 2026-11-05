@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../../schemas/tarjetas.schema.json",
+  "asignatura": "calculo",
+  "tema": "03-series",
+  "fuente": "genérico - revisar con apuntes",
+  "tarjetas": [
+    { "id": "def-serie", "tipo": "concepto", "anverso": "¿Qué significa que $\\sum a_n$ converge?", "reverso": "Que la sucesión de sumas parciales $S_N=a_1+\\dots+a_N$ tiene límite finito $S$; ese límite es la suma." },
+    { "id": "prop-condicion-necesaria", "tipo": "concepto", "anverso": "Condición necesaria de convergencia de una serie.", "reverso": "Si $\\sum a_n$ converge, entonces $a_n\\to0$.\nSi $a_n\\not\\to0$, diverge. Si $a_n\\to0$, **no** se sabe aún." },
+    { "id": "def-geometrica", "tipo": "concepto", "anverso": "¿Cuándo converge $\\sum r^n$ y cuánto suma?", "reverso": "Converge si $|r|<1$. Suma $=\\dfrac{\\text{primer término}}{1-r}$ (si empieza en $n=0$: $\\frac{1}{1-r}$)." },
+    { "id": "def-telescopica", "tipo": "concepto", "anverso": "¿Qué es una serie telescópica?", "reverso": "Una con $a_n=b_n-b_{n+1}$: los términos se cancelan y $S_N=b_1-b_{N+1}$." },
+    { "id": "prop-p-series", "tipo": "concepto", "anverso": "¿Cuándo converge $\\sum\\frac1{n^p}$?", "reverso": "Si y solo si $p>1$. La armónica ($p=1$) diverge." },
+    { "id": "prop-armonica", "tipo": "concepto", "anverso": "¿Converge la serie armónica $\\sum\\frac1n$?", "reverso": "No, diverge, aunque $\\frac1n\\to0$. Es el contraejemplo clásico a \"si $a_n\\to0$ converge\"." },
+    { "id": "proc-comparacion-limite", "tipo": "procedimiento", "anverso": "¿Cómo aplicas la comparación en el límite a un cociente de polinomios?", "reverso": "1. $p$ = grado abajo − grado arriba.\n2. $b_n=\\frac1{n^p}$.\n3. Si $\\lim\\frac{a_n}{b_n}=\\ell\\in(0,\\infty)$, mismo carácter que $\\sum\\frac1{n^p}$." },
+    { "id": "prop-comparacion-directa", "tipo": "concepto", "anverso": "Comparación directa: si $0\\le a_n\\le b_n$, ¿qué puedes concluir?", "reverso": "$\\sum b_n$ converge ⇒ $\\sum a_n$ converge.\n$\\sum a_n$ diverge ⇒ $\\sum b_n$ diverge." },
+    { "id": "proc-cociente", "tipo": "procedimiento", "anverso": "Criterio del cociente (D'Alembert) para series.", "reverso": "$\\ell=\\lim\\frac{a_{n+1}}{a_n}$.\n$\\ell<1$: converge. $\\ell>1$: diverge. $\\ell=1$: no decide.\nÚsalo con $n!$ y $a^n$." },
+    { "id": "proc-raiz", "tipo": "procedimiento", "anverso": "Criterio de la raíz (Cauchy) para series.", "reverso": "$\\ell=\\lim\\sqrt[n]{a_n}$. $\\ell<1$: converge; $\\ell>1$: diverge; $\\ell=1$: no decide.\nÚsalo cuando todo está elevado a $n$." },
+    { "id": "def-absoluta", "tipo": "concepto", "anverso": "¿Qué es convergencia absoluta y qué implica?", "reverso": "$\\sum|a_n|$ converge. Implica que $\\sum a_n$ converge." },
+    { "id": "prop-leibniz", "tipo": "concepto", "anverso": "Criterio de Leibniz.", "reverso": "Si $b_n\\ge0$ es decreciente y $b_n\\to0$, la serie alternada $\\sum(-1)^nb_n$ converge." },
+    { "id": "def-condicional", "tipo": "concepto", "anverso": "¿Qué es convergencia condicional? Pon un ejemplo.", "reverso": "Converge pero no absolutamente. Ejemplo: $\\sum\\frac{(-1)^{n+1}}{n}$ converge y $\\sum\\frac1n$ no." },
+    { "id": "proc-elegir-criterio", "tipo": "procedimiento", "anverso": "¿En qué orden pruebas criterios con una serie?", "reverso": "1. ¿$a_n\\to0$? Si no, diverge.\n2. ¿Geométrica/telescópica?\n3. Polinomios: comparación con $\\frac1{n^p}$.\n4. $n!$, $a^n$: cociente.\n5. Potencia $n$: raíz.\n6. Alternada: absoluta, luego Leibniz." },
+    { "id": "proc-fracciones-simples", "tipo": "procedimiento", "anverso": "¿Cómo sumas $\\sum\\frac{1}{(n+1)(n+2)}$?", "reverso": "1. $\\frac{1}{(n+1)(n+2)}=\\frac1{n+1}-\\frac1{n+2}$.\n2. $S_N=\\frac12-\\frac1{N+2}$ (telescópica).\n3. Suma $=\\frac12$." },
+    { "id": "error-cociente-uno", "tipo": "concepto", "anverso": "Si el criterio del cociente da $\\ell=1$, ¿qué haces?", "reverso": "Nada concluye: prueba otro criterio (típicamente comparar con una $p$-serie)." }
+  ]
+}

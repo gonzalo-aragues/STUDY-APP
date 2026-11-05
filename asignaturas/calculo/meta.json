@@ -18,17 +18,23 @@
     {
       "slug": "01-numeros-complejos",
       "titulo": "Números complejos",
-      "estado": "pendiente"
+      "estado": "generado",
+      "fuente": "genérico - revisar con apuntes",
+      "horas": 8
     },
     {
       "slug": "02-sucesiones",
       "titulo": "Sucesiones",
-      "estado": "pendiente"
+      "estado": "generado",
+      "fuente": "genérico - revisar con apuntes",
+      "horas": 8
     },
     {
       "slug": "03-series",
       "titulo": "Series",
-      "estado": "pendiente"
+      "estado": "generado",
+      "fuente": "genérico - revisar con apuntes",
+      "horas": 9
     }
   ]
 }
