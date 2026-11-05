@@ -1,6 +1,8 @@
 import { daysBetween, formatLong } from '../../../shared/dates.ts';
 import type { ScreenFn } from '../lib/ctx.ts';
-import { h } from '../lib/dom.ts';
+import { h, svg } from '../lib/dom.ts';
+import { buildIcs } from '../lib/ics.ts';
+import { ICONS } from '../lib/icons.ts';
 import { href } from '../lib/router.ts';
 import { countdownLabel, empty, header } from '../lib/ui.ts';
 
@@ -38,6 +40,36 @@ export const renderExamenes: ScreenFn = async (_route, ctx) => {
     );
   }
   node.append(list);
+  if (upcoming.length) {
+    node.append(
+      h(
+        'button',
+        {
+          class: 'btn block',
+          onclick: () => {
+            const ics = buildIcs(
+              upcoming.map(({ a, e }) => ({
+                uid: `${a.slug}-${e.fecha}-${e.tipo ?? 'final'}`,
+                titulo: `${e.titulo ?? TIPO[e.tipo ?? 'final']} de ${a.nombre}`,
+                fecha: e.fecha,
+                hora: e.hora,
+                lugar: e.lugar,
+                notas: e.notas,
+              })),
+            );
+            const url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+            const link = h('a', { href: url, download: 'examenes.ics' });
+            document.body.append(link);
+            link.click();
+            link.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+          },
+        },
+        svg(ICONS.examenes),
+        'Añadir al calendario (.ics)',
+      ),
+    );
+  }
   if (past.length) {
     node.append(
       h(

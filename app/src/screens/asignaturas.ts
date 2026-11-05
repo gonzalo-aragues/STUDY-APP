@@ -1,8 +1,8 @@
 import { daysBetween, formatShort } from '../../../shared/dates.ts';
 import type { AsignaturaIndex, EjercicioIndex, Nivel, TemaIndex } from '../../../shared/types.ts';
-import { findSubject, loadTema, nextExam } from '../lib/content.ts';
+import { findSubject, loadSubjectCards, loadTema, nextExam } from '../lib/content.ts';
 import type { Ctx, ScreenFn } from '../lib/ctx.ts';
-import { getTaskChecks, setTaskCheck } from '../lib/db.ts';
+import { getAllCardStates, getTaskChecks, setTaskCheck } from '../lib/db.ts';
 import { h, plural, svg } from '../lib/dom.ts';
 import { ICONS } from '../lib/icons.ts';
 import { href } from '../lib/router.ts';
@@ -74,13 +74,38 @@ async function renderSubject(ctx: Ctx, slug: string) {
   if (!a.temas.length) {
     node.append(empty('Sin temas todavía', `Deja tus apuntes en asignaturas/${a.slug}/apuntes/ y pide a Claude Code «genera el material del tema 1 de ${a.abreviatura}».`));
   }
+  const [cards, states, checks] = await Promise.all([loadSubjectCards(a), getAllCardStates(), getTaskChecks()]);
+  const progress = new Map<string, TemaProgress>();
+  for (const t of a.temas) {
+    const tc = cards.filter((c) => c.tema === t.slug);
+    progress.set(t.slug, {
+      vistas: tc.filter((c) => states.has(c.id)).length,
+      maduras: tc.filter((c) => (states.get(c.id)?.stability ?? 0) >= 21).length,
+      ejercicios: Array.from({ length: t.numEjercicios }).filter((_, i) => checks.get(`ej/${a.slug}/${t.slug}/${i + 1}`)).length,
+    });
+  }
   const list = h('ol', { class: 'temas' });
-  a.temas.forEach((t, i) => list.append(temaRow(a, t, i)));
+  a.temas.forEach((t, i) => list.append(temaRow(a, t, i, progress.get(t.slug))));
   node.append(list);
   return { node, title: a.nombre };
 }
 
-function temaRow(a: AsignaturaIndex, t: TemaIndex, i: number): HTMLElement {
+interface TemaProgress {
+  vistas: number; // cards seen at least once
+  maduras: number; // stability >= 21 days
+  ejercicios: number; // exercises ticked as done
+}
+
+function progressBars(t: TemaIndex, p: TemaProgress | undefined): HTMLElement | null {
+  if (!p || !t.url) return null;
+  const bar = (label: string, n: number, total: number) =>
+    total
+      ? h('div', { class: 'mini' }, h('span', { class: 'muted small' }, `${label} ${n}/${total}`), h('div', { class: 'bar' }, h('span', { style: `width:${(n / total) * 100}%` })))
+      : null;
+  return h('div', { class: 'tema-progress' }, bar('Tarjetas', p.vistas, t.numTarjetas), bar('Ejercicios', p.ejercicios, t.numEjercicios));
+}
+
+function temaRow(a: AsignaturaIndex, t: TemaIndex, i: number, p?: TemaProgress): HTMLElement {
   const generic = t.fuente && /^gen[eé]rico/i.test(t.fuente);
   return h(
     'li',
@@ -95,6 +120,7 @@ function temaRow(a: AsignaturaIndex, t: TemaIndex, i: number): HTMLElement {
           t.numTarjetas ? h('a', { class: 'btn small ghost', href: href('repasar', { asignatura: a.slug, tema: t.slug }) }, 'Tarjetas') : null,
         )
       : null,
+    progressBars(t, p),
   );
 }
 

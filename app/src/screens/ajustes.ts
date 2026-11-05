@@ -1,7 +1,7 @@
 import { formatWithYear, toISODate } from '../../../shared/dates.ts';
 import { backupFileName, parseBackup } from '../lib/backup.ts';
 import type { ScreenFn } from '../lib/ctx.ts';
-import { exportBackup, getReviewLog, importBackup, requestPersistence, setSetting } from '../lib/db.ts';
+import { exportBackup, getAllCardStates, getReviewLog, importBackup, requestPersistence, setSetting } from '../lib/db.ts';
 import { h, svg } from '../lib/dom.ts';
 import { ICONS } from '../lib/icons.ts';
 import { href } from '../lib/router.ts';
@@ -12,6 +12,20 @@ export const renderAjustes: ScreenFn = async (_route, ctx) => {
   const settings = await loadSettings();
   const log = await getReviewLog();
   const node = h('div', { class: 'screen ajustes' }, header('Ajustes', { back: href('hoy') }));
+
+  // --- Progress summary
+  const states = await getAllCardStates();
+  const weekAgo = ctx.now() - 7 * 86_400_000;
+  const maduras = [...states.values()].filter((c) => c.stability >= 21).length;
+  const stat = (n: number, label: string) => h('div', null, h('p', { class: 'stat-num' }, String(n)), h('p', { class: 'muted small' }, label));
+  node.append(
+    h(
+      'section',
+      { class: 'card' },
+      h('h2', null, 'Tu progreso'),
+      h('div', { class: 'stats' }, stat(log.filter((l) => l.at >= weekAgo).length, 'repasos esta semana'), stat(states.size, 'tarjetas vistas'), stat(maduras, 'bien asentadas (≥ 3 semanas)')),
+    ),
+  );
 
   // --- Theme
   const theme = getTheme();

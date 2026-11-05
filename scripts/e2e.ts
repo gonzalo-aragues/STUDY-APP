@@ -111,6 +111,15 @@ await sol.locator('summary').click();
 check(await sol.evaluate((d: HTMLDetailsElement) => d.open && d.textContent!.includes('Suma elemento a elemento')), '«Ver solución» muestra la solución del mismo número');
 check((await page.locator('.exercise').count()) === 13, 'Se muestran los 13 ejercicios');
 
+// --- exams to calendar (.ics)
+await page.goto(`${origin}#/examenes`);
+await page.waitForSelector('.exam-row');
+const [icsDl] = await Promise.all([page.waitForEvent('download'), page.click('text=Añadir al calendario')]);
+const icsFile = join(tmpdir(), `examenes-${Date.now()}.ics`);
+await icsDl.saveAs(icsFile);
+const icsText = readFileSync(icsFile, 'utf8');
+check((icsText.match(/BEGIN:VEVENT/g) ?? []).length === 5 && icsText.includes('DTSTART;VALUE=DATE:20261222'), 'Exámenes → .ics con los 5 exámenes (PROG1 el 22/12)');
+
 // --- export backup
 await page.goto(`${origin}#/ajustes`);
 await page.waitForSelector('text=Exportar copia de seguridad');

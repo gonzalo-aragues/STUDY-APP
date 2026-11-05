@@ -922,6 +922,34 @@ a.item-text:hover {
   margin-top: 12px;
   padding-left: 42px;
 }
+.tema-progress {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+  padding-left: 42px;
+}
+.tema-progress .bar {
+  margin-top: 4px;
+}
+@media (max-width: 480px) {
+  .tema-actions,
+  .tema-progress {
+    padding-left: 0;
+  }
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+.stat-num {
+  font-size: 24px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-strong);
+}
 details.archived > summary {
   cursor: pointer;
   color: var(--muted);
