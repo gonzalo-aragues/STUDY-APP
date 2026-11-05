@@ -92,6 +92,8 @@ días antes, repaso final el día antes.
 - iOS puede borrar datos de webs no instaladas tras semanas sin abrirlas: **instala la app** y
   haz copias.
 - Solo hay comprobador automático de código para C++ (`check-code`); para otros lenguajes, a mano.
+- Cuando se publica una versión nueva, la app se actualiza sola y puede recargarse una vez mientras
+  la usas (no se pierde nada: cada respuesta se guarda al momento).
 
 ## Ideas para más adelante
 

@@ -22,7 +22,9 @@ export default defineConfig({
       injectRegister: false, // registered from main.ts
       includeAssets: ['icon.svg', 'apple-touch-icon.png'],
       manifest: {
+        id: './',
         name: 'Estudio — repaso y material',
+        categories: ['education', 'productivity'],
         short_name: 'Estudio',
         description: 'Material de estudio y repaso espaciado de la carrera. Funciona sin conexión.',
         lang: 'es-ES',
