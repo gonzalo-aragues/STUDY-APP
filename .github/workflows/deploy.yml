@@ -35,6 +35,9 @@ jobs:
       - name: Tests
         run: npm test
 
+      - name: Compilar y ejecutar los programas C++ del material
+        run: npm run check-code
+
       # build = validate (schemas, ejercicio↔solución, LaTeX) + build-index + vite build
       - name: Validar contenido, generar índice y compilar la app
         run: npm run build

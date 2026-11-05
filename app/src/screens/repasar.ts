@@ -93,7 +93,7 @@ export const renderRepasar: ScreenFn = async (route, ctx) => {
   const timerEl = h('span', { class: 'timer' });
   const cardEl = h('article', { class: 'flash', 'aria-live': 'polite' });
   const controls = h('div', { class: 'controls' });
-  stage.append(progress, cardEl, controls);
+  stage.append(progress, cardEl, controls, h('p', { class: 'kbd-hint muted small' }, 'Teclado: Espacio muestra la respuesta · 1–4 responden · Z deshace'));
 
   let tick: number | undefined;
   if (deadline !== Infinity) {

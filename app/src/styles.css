@@ -837,6 +837,15 @@ a.item-text:hover {
   border-color: color-mix(in srgb, var(--easy) 50%, var(--border));
   color: var(--easy);
 }
+.kbd-hint {
+  display: none;
+  text-align: center;
+}
+@media (min-width: 900px) and (hover: hover) {
+  .kbd-hint {
+    display: block;
+  }
+}
 .summary {
   text-align: center;
   display: flex;

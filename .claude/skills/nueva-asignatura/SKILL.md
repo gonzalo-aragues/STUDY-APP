@@ -25,7 +25,8 @@ description: Da de alta una asignatura (carpeta asignaturas/<slug>/ con apuntes/
    ```
    - `--examen` admite `AAAA-MM-DD`, `AAAA-MM-DD@09:00` y `AAAA-MM-DD:parcial`.
    - `--temas "A; B; C"` es un atajo. `--horas 6` pone la estimación a todos los temas.
-   - Si la asignatura ya existe, `--actualizar` **añade** temas/exámenes sin tocar lo demás.
+   - Si la asignatura ya existe, `--actualizar` **añade** temas/exámenes sin tocar lo demás (y si
+     la fecha de examen ya estaba, actualiza su hora/tipo: `--examen 2027-01-16@09:00`).
    - Para **cambiar** una fecha o renombrar algo, edita `meta.json` directamente (no cambies slugs
      de temas que ya tengan tarjetas: se perdería el historial de repaso).
 

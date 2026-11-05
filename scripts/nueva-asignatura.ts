@@ -5,7 +5,8 @@
 //   [--abreviatura Cálculo] [--curso 1] [--dificultad 4] [--color #2f7d6d] [--lenguaje cpp] [--horas 6]
 //
 // Options: --examen accepts FECHA, FECHA:tipo or FECHA@HH:MM[:tipo]. --temas "A; B; C" is a shortcut.
-// Refuses to overwrite an existing subject unless --actualizar (then only adds missing temas/exams).
+// Refuses to overwrite an existing subject unless --actualizar (then adds missing temas/exams and
+// updates the time/type of an exam on an existing date).
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
@@ -60,7 +61,11 @@ function main() {
       process.exit(1);
     }
     meta = JSON.parse(readFileSync(metaPath, 'utf8')) as Meta;
-    for (const ex of examenes) if (!meta.examenes.some((e) => e.fecha === ex.fecha)) meta.examenes.push(ex);
+    for (const ex of examenes) {
+      const same = meta.examenes.find((e) => e.fecha === ex.fecha);
+      if (!same) meta.examenes.push(ex);
+      else Object.assign(same, ex); // same date: update time/type
+    }
     const start = meta.temas.length;
     temaTitles.forEach((t, i) => {
       if (!meta.temas.some((x) => x.titulo === t)) meta.temas.push({ slug: temaSlug(start + i + 1, t), titulo: t, estado: 'pendiente', ...(horas ? { horas } : {}) });
