@@ -132,3 +132,25 @@ Formato: **decisión** — motivo.
   (no tiene sentido que te pregunte por series antes de leerlas). El resto, después.
 - **Asignaturas archivadas no se precachean** (van en `content/archivo/`, se guardan al abrirlas):
   así la app no crece cada semestre. Un tema de mates pesa ~550 KB sin comprimir pero ~25 KB por red.
+
+## Fórmulas en el móvil
+
+- **Las fórmulas en bloque que no caben se encogen solas hasta un 70 %** (`app/src/lib/fitmath.ts`,
+  también al abrir "Ver solución" y al cambiar de tamaño). Lo que sigue sin caber se desplaza de lado
+  dentro de su caja (nunca la página entera).
+- **Partí en varias líneas las fórmulas más largas** del contenido (pasos de Gauss, Sarrus, cadenas de
+  igualdades): de 37 fórmulas que necesitaban scroll a 390 px quedan 0–2 de 3–5 px.
+- Regla añadida a **explicar-desde-cero** / **apuntes-a-material**: ~35–40 símbolos por línea,
+  `aligned` para cadenas largas, un paso de Gauss por bloque. `scripts/screenshots.ts` avisa si alguna
+  fórmula aún necesita scroll.
+
+## Extras añadidos al terminar los milestones
+
+- **Exámenes → "Añadir al calendario (.ics)"**: descarga un calendario con todos los exámenes
+  (día completo, o con hora si la pones en `meta.json`) y aviso el día antes. Sin servidor.
+- **Progreso por tema** en cada asignatura (tarjetas vistas, ejercicios hechos) y **"Tu progreso"**
+  en Ajustes (repasos de la semana, tarjetas vistas, tarjetas asentadas ≥ 3 semanas).
+- **CI** también ejecuta `npm run check-code`, y un test comprueba que el contenido real del repo
+  valida sin errores.
+- `nueva-asignatura --actualizar` ahora actualiza la hora/tipo de un examen que ya existía.
+- Atajos de teclado visibles en Repasar (solo escritorio).

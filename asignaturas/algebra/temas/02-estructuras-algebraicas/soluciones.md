@@ -97,8 +97,8 @@ b) $2x$ en $\Z_6$ solo puede valer $0,2,4,0,2,4$ para $x=0,\dots,5$. Nunca 3. **
 ### Solución 11
 a) **Conmutativa:** $a+b-ab=b+a-ba$ ✓.
 **Asociativa:**
-$$(a*b)*c=(a+b-ab)+c-(a+b-ab)c=a+b+c-ab-ac-bc+abc,$$
-$$a*(b*c)=a+(b+c-bc)-a(b+c-bc)=a+b+c-ab-ac-bc+abc.$$
+$$\begin{aligned}(a*b)*c&=(a+b-ab)+c-(a+b-ab)c\\&=a+b+c-ab-ac-bc+abc,\end{aligned}$$
+$$\begin{aligned}a*(b*c)&=a+(b+c-bc)-a(b+c-bc)\\&=a+b+c-ab-ac-bc+abc.\end{aligned}$$
 Iguales ✓.
 
 b) **Neutro:** $a+e-ae=a\iff e(1-a)=0$ para todo $a$ ⇒ $e=0$. Comprobación: $a*0=a+0-0=a$ ✓.

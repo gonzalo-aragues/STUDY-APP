@@ -8,6 +8,7 @@ import { ICONS } from '../lib/icons.ts';
 import { go, href } from '../lib/router.ts';
 import { buildQueue, formatInterval, newIntroducedToday, plannedTemas, previewIntervals, RATINGS, requeuePosition, review, shouldRequeue, type RatingValue, type StoredCard } from '../lib/scheduler.ts';
 import { loadSettings } from '../lib/settings.ts';
+import { fitMath } from '../lib/fitmath.ts';
 import { dot, empty, header } from '../lib/ui.ts';
 
 const FIVE_MIN = 5 * 60_000;
@@ -156,6 +157,7 @@ export const renderRepasar: ScreenFn = async (route, ctx) => {
       );
     }
     renderProgress();
+    requestAnimationFrame(() => fitMath(cardEl));
   }
 
   function reveal() {

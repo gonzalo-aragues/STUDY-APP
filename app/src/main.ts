@@ -2,6 +2,7 @@ import 'katex/dist/katex.min.css';
 import './styles.css';
 import { registerSW } from 'virtual:pwa-register';
 import { loadIndex } from './lib/content.ts';
+import { fitMath, installFitMath } from './lib/fitmath.ts';
 import { makeCtx, type Ctx, type Screen, type ScreenFn } from './lib/ctx.ts';
 import { requestPersistence } from './lib/db.ts';
 import { h, svg } from './lib/dom.ts';
@@ -70,6 +71,8 @@ async function render(keepScroll = false) {
     }
     current = screen;
     view.replaceChildren(screen.node);
+    requestAnimationFrame(() => fitMath(view));
+    void document.fonts?.ready.then(() => fitMath(view)); // KaTeX fonts change the widths
     document.title = screen.title ? `${screen.title} · Estudio` : 'Estudio';
     window.scrollTo(0, keepScroll ? scrollY : 0);
   } catch (e) {
@@ -85,6 +88,7 @@ async function render(keepScroll = false) {
   }
 }
 
+installFitMath(view);
 window.addEventListener('hashchange', () => void render());
 window.addEventListener('app:rerender', () => void render(true));
 void render();

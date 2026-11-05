@@ -36,7 +36,8 @@ Tipos que hay que reconocer:
 
 - **Suma** (mismo tamaño): elemento a elemento. **Por un número**: multiplica cada elemento.
 - **Producto** $AB$: solo si **columnas de $A$ = filas de $B$**. Si $A$ es $m\times n$ y $B$ es $n\times p$, $AB$ es $m\times p$ y
-$$(AB)_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\dots+a_{in}b_{nj}\quad(\text{fila } i \text{ de } A \text{ "por" columna } j \text{ de } B).$$
+$$(AB)_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\dots+a_{in}b_{nj}$$
+Es decir: fila $i$ de $A$ "por" columna $j$ de $B$ (multiplica uno a uno y suma).
 
 ¡Cuidado! El producto **no es conmutativo**: en general $AB\neq BA$ (a veces ni siquiera existen los dos). Sí se cumple: $(AB)C=A(BC)$, $A(B+C)=AB+AC$, $AI=IA=A$ y $(AB)^t=B^tA^t$.
 
@@ -46,7 +47,7 @@ El **determinante** de una matriz cuadrada es un número, $\det A$ o $|A|$, que 
 
 - $2\times2$: $\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc$.
 - $3\times3$ (**regla de Sarrus**): suma de los productos de la diagonal principal y sus dos "paralelas", menos los de la otra diagonal y sus paralelas:
-$$\begin{vmatrix}a&b&c\\d&e&f\\g&h&i\end{vmatrix}=aei+bfg+cdh-ceg-bdi-afh.$$
+$$\begin{vmatrix}a&b&c\\d&e&f\\g&h&i\end{vmatrix}=\begin{aligned}&aei+bfg+cdh\\&-ceg-bdi-afh.\end{aligned}$$
 - Cualquier tamaño: **desarrollo por una fila o columna** (elige la que tenga más ceros), con signos en tablero de ajedrez $\begin{smallmatrix}+&-&+\\-&+&-\\+&-&+\end{smallmatrix}$.
 
 **Propiedades que ahorran cuentas:**
@@ -99,7 +100,8 @@ En un SCI, las incógnitas "sobrantes" pasan a ser **parámetros** ($z=\lambda$)
 
 $A=\begin{pmatrix}1&2\\0&-1\end{pmatrix}$, $B=\begin{pmatrix}3&1\\2&4\end{pmatrix}$. Calcula $AB$ y $BA$.
 
-$$AB=\begin{pmatrix}1\cdot3+2\cdot2&1\cdot1+2\cdot4\\0\cdot3+(-1)\cdot2&0\cdot1+(-1)\cdot4\end{pmatrix}=\begin{pmatrix}7&9\\-2&-4\end{pmatrix},\qquad BA=\begin{pmatrix}3&5\\2&0\end{pmatrix}.$$
+$$AB=\begin{pmatrix}1\cdot3+2\cdot2&1\cdot1+2\cdot4\\0\cdot3+(-1)\cdot2&0\cdot1+(-1)\cdot4\end{pmatrix}$$
+$$AB=\begin{pmatrix}7&9\\-2&-4\end{pmatrix},\qquad BA=\begin{pmatrix}3&5\\2&0\end{pmatrix}.$$
 Distintos: el orden importa.
 
 ### Ejemplo 2 (típico): sistema por Gauss

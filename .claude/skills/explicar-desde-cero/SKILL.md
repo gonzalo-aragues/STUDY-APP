@@ -55,6 +55,11 @@ primero de carrera **sin bloquearse**. Todo en **español de España**.
 - Cada símbolo nuevo se presenta con palabras la primera vez ("$\forall$ se lee *para todo*").
 - Matemáticas en LaTeX: en línea con `$...$`, en bloque con `$$...$$` **en su propia línea**.
   Macros disponibles: `\R \N \Z \Q \C \K`. Un dólar literal: `\$`.
+- **Pensado para el móvil (390 px de ancho):** una fórmula en bloque no debería tener más de
+  ~35–40 símbolos por línea. Las cadenas largas de igualdades, pártelas con
+  `\begin{aligned} a&=b\\ &=c \end{aligned}`; los pasos de Gauss, uno por bloque `$$...$$` con la
+  operación escrita antes ("$F_3\to F_3-F_1$:"). La app encoge hasta un 70 % lo que no cabe, y lo
+  demás se desplaza de lado, pero es incómodo.
 - En los ejemplos **muestra todos los pasos**, sin "es fácil ver que". Justifica cada paso en una
   línea ("multiplicamos por el conjugado para quitar la $i$ del denominador").
 - Código (asignaturas de programación): bloques con lenguaje (```` ```cpp ````), programas cortos

@@ -21,7 +21,10 @@ b) $B$ es $3\times\mathbf2$ y $A$ es $\mathbf2\times3$: sí se puede; $BA$ es $3
 a) $3\cdot4-2\cdot1=10$.
 
 b) Sarrus:
-$$\underbrace{1\cdot(-1)\cdot1}_{-1}+\underbrace{2\cdot2\cdot1}_{4}+\underbrace{0\cdot3\cdot0}_{0}-\underbrace{0\cdot(-1)\cdot1}_{0}-\underbrace{2\cdot3\cdot1}_{6}-\underbrace{1\cdot2\cdot0}_{0}=-1+4-6=-3.$$
+- Diagonales "hacia abajo": $1\cdot(-1)\cdot1=-1$, $\ 2\cdot2\cdot1=4$, $\ 0\cdot3\cdot0=0$.
+- Diagonales "hacia arriba" (se restan): $0\cdot(-1)\cdot1=0$, $\ 2\cdot3\cdot1=6$, $\ 1\cdot2\cdot0=0$.
+
+$$(-1+4+0)-(0+6+0)=-3.$$
 
 **Resultado:** a) $10$; b) $-3$.
 
@@ -39,7 +42,8 @@ Quedan 2 filas no nulas.
 **Resultado:** $\operatorname{rg}=2$ (la fila 2 era el doble de la 1).
 
 ### Solución 6
-$$\left(\begin{array}{ccc|c}1&2&-1&3\\2&1&1&6\\-1&1&2&5\end{array}\right)\xrightarrow[F_3+F_1]{F_2-2F_1}\left(\begin{array}{ccc|c}1&2&-1&3\\0&-3&3&0\\0&3&1&8\end{array}\right)\xrightarrow{F_3+F_2}\left(\begin{array}{ccc|c}1&2&-1&3\\0&-3&3&0\\0&0&4&8\end{array}\right)$$
+$$\left(\begin{array}{ccc|c}1&2&-1&3\\2&1&1&6\\-1&1&2&5\end{array}\right)\xrightarrow[F_3+F_1]{F_2-2F_1}\left(\begin{array}{ccc|c}1&2&-1&3\\0&-3&3&0\\0&3&1&8\end{array}\right)$$
+$$\xrightarrow{F_3+F_2}\left(\begin{array}{ccc|c}1&2&-1&3\\0&-3&3&0\\0&0&4&8\end{array}\right)$$
 
 De abajo arriba:
 - $4z=8\Rightarrow z=2$.
@@ -49,7 +53,12 @@ De abajo arriba:
 **Resultado:** $(x,y,z)=(1,2,2)$. Comprobación en la 3.ª: $-1+2+4=5$ ✓.
 
 ### Solución 7
-$$\left(\begin{array}{ccc|ccc}1&0&1&1&0&0\\0&1&0&0&1&0\\1&0&2&0&0&1\end{array}\right)\xrightarrow{F_3-F_1}\left(\begin{array}{ccc|ccc}1&0&1&1&0&0\\0&1&0&0&1&0\\0&0&1&-1&0&1\end{array}\right)\xrightarrow{F_1-F_3}\left(\begin{array}{ccc|ccc}1&0&0&2&0&-1\\0&1&0&0&1&0\\0&0&1&-1&0&1\end{array}\right)$$
+Partimos de $(A\mid I)$:
+$$\left(\begin{array}{ccc|ccc}1&0&1&1&0&0\\0&1&0&0&1&0\\1&0&2&0&0&1\end{array}\right)$$
+$F_3\to F_3-F_1$:
+$$\left(\begin{array}{ccc|ccc}1&0&1&1&0&0\\0&1&0&0&1&0\\0&0&1&-1&0&1\end{array}\right)$$
+$F_1\to F_1-F_3$ (ya tenemos $I$ a la izquierda):
+$$\left(\begin{array}{ccc|ccc}1&0&0&2&0&-1\\0&1&0&0&1&0\\0&0&1&-1&0&1\end{array}\right)$$
 
 **Resultado:** $A^{-1}=\begin{pmatrix}2&0&-1\\0&1&0\\-1&0&1\end{pmatrix}$.
 
@@ -65,7 +74,8 @@ b)
 
 ### Solución 9
 Ampliada y Gauss:
-$$\left(\begin{array}{ccc|c}1&1&1&1\\1&-1&1&3\\2&0&2&5\end{array}\right)\xrightarrow[F_3-2F_1]{F_2-F_1}\left(\begin{array}{ccc|c}1&1&1&1\\0&-2&0&2\\0&-2&0&3\end{array}\right)\xrightarrow{F_3-F_2}\left(\begin{array}{ccc|c}1&1&1&1\\0&-2&0&2\\0&0&0&1\end{array}\right)$$
+$$\left(\begin{array}{ccc|c}1&1&1&1\\1&-1&1&3\\2&0&2&5\end{array}\right)\xrightarrow[F_3-2F_1]{F_2-F_1}\left(\begin{array}{ccc|c}1&1&1&1\\0&-2&0&2\\0&-2&0&3\end{array}\right)$$
+$$\xrightarrow{F_3-F_2}\left(\begin{array}{ccc|c}1&1&1&1\\0&-2&0&2\\0&0&0&1\end{array}\right)$$
 
 La última fila dice $0=1$. $\operatorname{rg}A=2\neq3=\operatorname{rg}(A|B)$.
 

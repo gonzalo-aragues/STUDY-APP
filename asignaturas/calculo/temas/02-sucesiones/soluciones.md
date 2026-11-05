@@ -35,7 +35,7 @@ $$\frac{3}{\sqrt{1+\frac3n}+1}\to\frac{3}{1+1}=\frac32.$$
 
 ### Solución 5
 **Monotonía:**
-$$a_{n+1}-a_n=\frac{n+1}{n+2}-\frac{n}{n+1}=\frac{(n+1)^2-n(n+2)}{(n+2)(n+1)}=\frac{1}{(n+2)(n+1)}>0.$$
+$$\begin{aligned}a_{n+1}-a_n&=\frac{n+1}{n+2}-\frac{n}{n+1}=\frac{(n+1)^2-n(n+2)}{(n+2)(n+1)}\\&=\frac{1}{(n+2)(n+1)}>0.\end{aligned}$$
 Luego es **estrictamente creciente**.
 
 **Acotación:** $0<\frac{n}{n+1}<1$ para todo $n$ (el numerador es menor que el denominador).

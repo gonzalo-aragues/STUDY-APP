@@ -68,6 +68,7 @@ const only = values.only?.split(',');
 
 const browser = await chromium.launch();
 const problems: string[] = [];
+const notes: string[] = [];
 for (const vp of [
   { tag: 'movil', width: 390, height: 844 },
   { tag: 'escritorio', width: 1280, height: 860 },
@@ -110,11 +111,13 @@ for (const vp of [
           vw,
           over: [...new Set(over)].slice(0, 5),
           katex: document.querySelectorAll('.katex').length,
+          wideMath: [...document.querySelectorAll('.katex-display')].filter((e) => e.scrollWidth > e.clientWidth + 8).length,
           mathErrors: document.querySelectorAll('.math-error, .katex-error').length,
         };
       });
       if (check.scrollW > check.vw + 1) problems.push(`[${vp.tag}/${scheme}] ${s.name}: scroll horizontal (${check.scrollW} > ${check.vw})`);
       if (check.over.length) problems.push(`[${vp.tag}/${scheme}] ${s.name}: se sale del ancho: ${check.over.join(', ')}`);
+      if (vp.tag === 'movil' && scheme === 'light' && check.wideMath) notes.push(`${s.name}: ${check.wideMath} fórmula(s) necesitan scroll horizontal en el móvil (pártelas con aligned)`);
       if (check.mathErrors) problems.push(`[${vp.tag}/${scheme}] ${s.name}: ${check.mathErrors} fórmulas con error`);
       const file = join(OUT, `${vp.tag}-${scheme}-${s.name}.png`);
       await page.screenshot({ path: file, fullPage: Boolean(s.fullPage) });
@@ -125,6 +128,7 @@ for (const vp of [
 }
 await browser.close();
 server.close();
+for (const n of notes) console.log(`ℹ️  ${n}`);
 if (problems.length) {
   console.log('\nProblemas:');
   for (const p of problems) console.log(' - ' + p);

@@ -8,7 +8,7 @@ fuente: genérico - revisar con apuntes
 $$z+w=(3-1)+(-2+5)i=2+3i.$$
 
 **Producto:** multiplicamos como polinomios y cambiamos $i^2=-1$:
-$$(3-2i)(-1+5i)=-3+15i+2i-10i^2=-3+17i+10=7+17i.$$
+$$\begin{aligned}(3-2i)(-1+5i)&=-3+15i+2i-10i^2\\&=-3+17i+10=7+17i.\end{aligned}$$
 
 **Resultado:** $z+w=2+3i$, $\;z\cdot w=7+17i$.
 

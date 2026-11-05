@@ -125,6 +125,9 @@ Salida, en `asignaturas/<slug>/temas/<nn-slug>/`:
      `explicacion.md` y `soluciones.md`, lo ejecuta con la `// entrada` y compara con la
      `// salida esperada`. Tiene que salir ✅ (los fragmentos sin `#include` se ignoran).
      Usa `(int)v.size()` o `size_t` en comparaciones para que `-Werror` no se queje.
+   - Fórmulas largas, en varias líneas (`aligned`) o en varios bloques: se leen en el móvil
+     (ver reglas de estilo de **explicar-desde-cero**). `node scripts/screenshots.ts` avisa de las
+     que aún necesitan scroll horizontal.
    - **Comprueba cada resultado** de matemáticas: rehaz el cálculo y, si es numérico, verifícalo
      con `python3 -c "..."` (hay `numpy` para matrices y determinantes).
 
